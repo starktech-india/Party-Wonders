@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Wonders & Florist Store - Event Decoration in Hyderabad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .hero-pattern {
+            background-color: #667eea;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .floating-btn {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .7; }
+        }
+
+        /* Carousel Styles */
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .carousel-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            flex-shrink: 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Mobile Carousel */
+        @media (max-width: 768px) {
+            .hero-carousel-mobile {
+                height: calc(100vh - 80px);
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+
+            .carousel-slide {
+                height: calc(100vh - 80px);
+            }
+
+            .carousel-overlay {
+                padding: 1rem;
+            }
+
+            .carousel-overlay h2 {
+                font-size: 1.25rem;
+            }
+
+            .carousel-overlay p {
+                font-size: 0.75rem;
+            }
+
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+            }
+
+            .carousel-btn.prev {
+                left: 10px;
+            }
+
+            .carousel-btn.next {
+                right: 10px;
+            }
+
+            .carousel-dots {
+                bottom: 20px;
+                gap: 6px;
+            }
+
+            .dot {
+                width: 8px;
+                height: 8px;
+            }
+
+            .dot.active {
+                width: 24px;
+            }
+
+            #statsMobile {
+                display: none;
+            }
+
+            .mobile-cta {
+                position: relative;
+                bottom: auto;
+                padding: 1rem 1rem;
+                gap: 0.75rem;
+                background: linear-gradient(to bottom, rgba(102, 126, 234, 0.95), rgba(102, 126, 234, 0.85));
+                backdrop-filter: blur(10px);
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                width: 100%;
+                margin-top: -4px;
+            }
+
+            .mobile-cta a {
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+                border-radius: 0.75rem;
+            }
+
+            .mobile-cta a:first-child {
+                margin-bottom: 0.5rem;
+            }
+
+            /* Stats Card Below Slider */
+            .mobile-hero-section {
+                background: white;
+                padding: 1.5rem 1rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .mobile-stats {
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                border-radius: 1.5rem;
+                padding: 1.5rem;
+                text-align: center;
+                color: white;
+                box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            }
+
+            .mobile-stats .text-4xl {
+                font-size: 2rem;
+                font-weight: 700;
+                margin-bottom: 0.5rem;
+            }
+
+            .mobile-stats .text-sm {
+                font-size: 0.875rem;
+                opacity: 0.9;
+            }
+
+            .mobile-features {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .mobile-features > div {
+                background: linear-gradient(135deg, #f5f7ff 0%, #f0e7ff 100%);
+                padding: 1rem;
+                border-radius: 1rem;
+                text-align: center;
+                border: 1px solid #e9d5ff;
+            }
+
+            .mobile-features i {
+                font-size: 1.5rem;
+                color: #667eea;
+                margin-bottom: 0.5rem;
+            }
+
+            .mobile-features p {
+                font-size: 0.75rem;
+                color: #4c1d95;
+                font-weight: 600;
+            }
+        }
+
+        /* Desktop Carousel */
+        @media (min-width: 769px) {
+            .mobile-hero-section {
+                display: none;
+            }
+
+            .carousel-slide {
+                height: 24rem;
+            }
+
+            .carousel-slide img {
+                border-radius: 1.5rem;
+            }
+
+            .carousel-btn {
+                width: 50px;
+                height: 50px;
+            }
+
+            .carousel-btn.prev {
+                left: 20px;
+            }
+
+            .carousel-btn.next {
+                right: 20px;
+            }
+
+            .carousel-dots {
+                bottom: 20px;
+                gap: 10px;
+            }
+
+            .dot {
+                width: 12px;
+                height: 12px;
+            }
+
+            .dot.active {
+                width: 32px;
+            }
+
+            .stats-card {
+                bottom: 1.5rem;
+                left: 1.5rem;
+                padding: 1.5rem;
+            }
+
+            .stats-card .text-4xl {
+                font-size: 2.25rem;
+            }
+
+            .stats-card .text-sm {
+                font-size: 0.875rem;
+            }
+
+            #statsMobile {
+                display: block;
+            }
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .carousel-dots {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            z-index: 10;
+        }
+
+        .dot {
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: white;
+            border-radius: 6px;
+        }
+
+        .stats-card {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 1.5rem;
+            text-purple-600;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            z-index: 20;
+            text-center;
+        }
+
+        .stats-card .text-4xl {
+            font-weight: 700;
+        }
+
+        .stats-card .text-sm {
+            margin-top: 0.25rem;
+            color: #9333ea;
+        }
+
+        /* Navigation responsive */
+        @media (max-width: 768px) {
+            nav .hidden {
+                display: none;
+            }
+        }
+
+        /* Hero Section */
+        @media (max-width: 768px) {
+            .hero-content-mobile {
+                display: none;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .hero-carousel-mobile {
+                display: none;
+            }
+        }
+
+        /* Services Grid */
+        @media (max-width: 640px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Footer Grid */
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-grid > div {
+                text-align: center;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* Floating buttons */
+        @media (max-width: 640px) {
+            .floating-action {
+                bottom: 1rem;
+                right: 1rem;
+                gap: 0.75rem;
+            }
+
+            .floating-action a {
+                width: 3.5rem;
+                height: 3.5rem;
+            }
+
+            .floating-action .hidden {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-40">
+        <div class="container mx-auto px-4 py-3 md:py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-gifts text-purple-600 text-2xl md:text-3xl"></i>
+                    <div>
+                        <h1 class="text-lg md:text-2xl font-bold text-gray-800">Party Wonders</h1>
+                        <p class="text-xs text-gray-500">& Florist Store</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="text-gray-700 hover:text-purple-600 transition">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-purple-600 transition">Services</a>
+                    <a href="#about" class="text-gray-700 hover:text-purple-600 transition">About</a>
+                    <a href="#booking" class="text-gray-700 hover:text-purple-600 transition">Book Now</a>
+                </div>
+                <a href="tel:+919346566373" class="hidden md:block bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition text-sm">
+                    <i class="fas fa-phone mr-2"></i>Call Now
+                </a>
+                <button class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-pattern pt-0 pb-0 text-white relative overflow-hidden">
+        <!-- Mobile Hero with Carousel -->
+        <div class="hero-carousel-mobile carousel w-full" id="heroCarouselMobile">
+            <div class="carousel-container" id="carouselContainerMobile">
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80" alt="Event Decoration 1" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent carousel-overlay flex flex-col justify-end">
+                        <h2 class="font-bold mb-1 text-white">Premium Decoration</h2>
+                        <p class="text-gray-200">Create magical moments</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1519167758481-dc80c3ceab47?w=600&q=80" alt="Event Decoration 2" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent carousel-overlay flex flex-col justify-end">
+                        <h2 class="font-bold mb-1 text-white">Fresh Flowers</h2>
+                        <p class="text-gray-200">For every celebration</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80" alt="Event Decoration 3" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent carousel-overlay flex flex-col justify-end">
+                        <h2 class="font-bold mb-1 text-white">Wedding Magic</h2>
+                        <p class="text-gray-200">Your dream wedding</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?w=600&q=80" alt="Event Decoration 4" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent carousel-overlay flex flex-col justify-end">
+                        <h2 class="font-bold mb-1 text-white">Gift Hampers</h2>
+                        <p class="text-gray-200">Thoughtful presents</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <button class="carousel-btn prev" id="prevBtnMobile" aria-label="Previous image">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-btn next" id="nextBtnMobile" aria-label="Next image">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <!-- Dots -->
+            <div class="carousel-dots" id="dotsMobile"></div>
+
+            <!-- Stats Card (Hidden on Mobile) -->
+            <div class="stats-card" id="statsMobile">
+                <div class="text-4xl font-bold">500+</div>
+                <div class="text-sm">Happy Events</div>
+            </div>
+
+            <!-- Mobile CTA -->
+            <div class="mobile-cta absolute z-20 flex flex-col w-full">
+                <a href="#booking" class="bg-white text-purple-600 rounded-lg font-semibold text-center hover:bg-yellow-300 transition shadow-lg">
+                    <i class="fas fa-calendar-check mr-2"></i>Book Event
+                </a>
+                <a href="#services" class="border-2 border-white text-white rounded-lg font-semibold text-center hover:bg-white hover:text-purple-600 transition">
+                    <i class="fas fa-th-large mr-2"></i>View Services
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile Section Below Slider -->
+        <div class="mobile-hero-section">
+            <!-- Stats Card -->
+            <div class="mobile-stats">
+                <div class="text-4xl font-bold">500+</div>
+                <div class="text-sm">Happy Events Completed</div>
+            </div>
+
+            <!-- Quick Features -->
+            <div class="mobile-features">
+                <div>
+                    <i class="fas fa-clock"></i>
+                    <p>Same-Day Service</p>
+                </div>
+                <div>
+                    <i class="fas fa-truck"></i>
+                    <p>On-Site Setup</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop Hero -->
+        <div class="hidden md:block min-h-screen">
+            <div class="container mx-auto px-4 h-screen flex items-center">
+                <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
+                    <!-- Left Content -->
+                    <div class="space-y-4 md:space-y-6 z-10">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">Transform Your Events Into <span class="text-yellow-300">Magical Moments</span></h1>
+                        <p class="text-base md:text-lg lg:text-xl text-purple-100">Premium event decoration, fresh flowers & customized gifts for every celebration in Hyderabad</p>
+                        <div class="flex flex-col sm:flex-row gap-3 md:gap-4">
+                            <a href="#booking" class="bg-white text-purple-600 px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-yellow-300 hover:text-purple-700 transition text-center shadow-lg">
+                                <i class="fas fa-calendar-check mr-2"></i>Book Event
+                            </a>
+                            <a href="#services" class="border-2 border-white text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-semibold text-sm md:text-lg hover:bg-white hover:text-purple-600 transition text-center">
+                                <i class="fas fa-th-large mr-2"></i>Services
+                            </a>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-3 md:gap-6 pt-2 md:pt-4 text-sm md:text-base">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-yellow-300"></i>
+                                <span>Same Day Service</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-yellow-300"></i>
+                                <span>On-Site Setup</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Carousel -->
+                    <div class="w-full relative">
+                        <div class="relative carousel rounded-3xl overflow-hidden shadow-2xl" id="heroCarouselDesktop">
+                            <div class="carousel-container" id="carouselContainerDesktop">
+                                <div class="carousel-slide">
+                                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80" alt="Event Decoration 1" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="https://images.unsplash.com/photo-1519167758481-dc80c3ceab47?w=800&q=80" alt="Event Decoration 2" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80" alt="Event Decoration 3" loading="lazy">
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?w=800&q=80" alt="Event Decoration 4" loading="lazy">
+                                </div>
+                            </div>
+
+                            <button class="carousel-btn prev" id="prevBtnDesktop" aria-label="Previous image">
+                                <i class="fas fa-chevron-left text-2xl"></i>
+                            </button>
+                            <button class="carousel-btn next" id="nextBtnDesktop" aria-label="Next image">
+                                <i class="fas fa-chevron-right text-2xl"></i>
+                            </button>
+
+                            <div class="carousel-dots" id="dotsDesktop"></div>
+
+                            <div class="stats-card" id="statsDesktop">
+                                <div class="text-4xl font-bold">500+</div>
+                                <div class="text-sm">Happy Events</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-2 md:mb-4">Our Premium Services</h2>
+                <p class="text-base md:text-xl text-gray-600">Creating unforgettable experiences for every occasion</p>
+            </div>
+            
+            <div class="services-grid grid gap-6 md:gap-8">
+                <!-- Party Decoration -->
+                <div class="service-card bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl md:rounded-3xl p-4 md:p-6 border border-purple-100">
+                    <div class="bg-purple-600 w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-3 md:mb-4">
+                        <i class="fas fa-birthday-cake text-2xl md:text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg md:text-2xl font-bold text-gray-800 mb-2 md:mb-3">Party Decoration</h3>
+                    <ul class="space-y-1 md:space-y-2 text-xs md:text-base text-gray-600">
+                        <li><i class="fas fa-star text-yellow-500 mr-2"></i>Birthday Parties</li>
+                        <li><i class="fas fa-star text-yellow-500 mr-2"></i>Balloon Decor</li>
+                        <li><i class="fas fa-star text-yellow-500 mr-2"></i>Kids Theme Parties</li>
+                        <li><i class="fas fa-star text-yellow-500 mr-2"></i>Anniversary Setups</li>
+                        <li><i class="fas fa-star text-yellow-500 mr-2"></i>Romantic Rooms</li>
+                    </ul>
+                </div>
+
+                <!-- Flower Services -->
+                <div class="service-card bg-gradient-to-br from-green-50 to-teal-50 rounded-2xl md:rounded-3xl p-4 md:p-6 border border-green-100">
+                    <div class="bg-green-600 w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-3 md:mb-4">
+                        <i class="fas fa-leaf text-2xl md:text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg md:text-2xl font-bold text-gray-800 mb-2 md:mb-3">Flower Services</h3>
+                    <ul class="space-y-1 md:space-y-2 text-xs md:text-base text-gray-600">
+                        <li><i class="fas fa-star text-yellow-500 mr-2"></i>Fresh Bouquets</li>
+                        <li><i class="fas fa-star text-yellow-500 mr-2"></i>Artificial Arrangements</li>
+                        <li><i class="fas fa-star text-yellow-500 mr-2"></i>Rose Bouquets</li>
+                        <li><i class="fas fa-star text-yellow-500 mr-2"></i>Car Decoration</li>
+                        <li><i class="fas fa-star text-yellow-500 mr-2"></i>Stage & Home Decor</li>
+                    </ul>
+                </div>
+
+                <!-- Wedding & Events -->
+                <div class="service-card bg-gradient-to-br from-red-50 to-pink-50 rounded-2xl md:rounded-3xl p-4 md:p-6 border border-red-100">
+                    <div class="bg-red-600 w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-3 md:mb-4">
+                        <i class="fas fa-rings-wedding text-2xl md:text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg md:text-2xl font-bold text-gray-800 mb-2 md:mb-3">Wedding & Events</h3>
+                    <ul class="space-y-1 md:space-y-2 text-xs md:text-base text-gray-600">
+                        <li><i class="fas fa-star text-yellow-500 mr-2"></i>Mandap Decoration</li>
+                        <li><i class="fas fa-star text-yellow-500 mr-2"></i>Reception Stages</li>
+                        <li><i class="fas fa-star text-yellow-500 mr-2"></i>Haldi & Mehndi</li>
+                        <li><i class="fas fa-star text-yellow-500 mr-2"></i>Bride & Groom Entry</li>
+                        <li><i class="fas fa-star text-yellow-500 mr-2"></i>Pathway & Gate</li>
+                    </ul>
+                </div>
+
+                <!-- Gifts & Corporate -->
+                <div class="service-card bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl md:rounded-3xl p-4 md:p-6 border border-yellow-100">
+                    <div class="bg-yellow-600 w-14 h-14 md:w-16 md:h-16 rounded-2xl flex items-center justify-center mb-3 md:mb-4">
+                        <i class="fas fa-gift text-2xl md:text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-lg md:text-2xl font-bold text-gray-800 mb-2 md:mb-3">Gifts & Corporate</h3>
+                    <ul class="space-y-1 md:space-y-2 text-xs md:text-base text-gray-600">
+                        <li><i class="fas fa-star text-yellow-500 mr-2"></i>Gift Hampers</li>
+                        <li><i class="fas fa-star text-yellow-500 mr-2"></i>Chocolate Bouquets</li>
+                        <li><i class="fas fa-star text-yellow-500 mr-2"></i>Soft Toys</li>
+                        <li><i class="fas fa-star text-yellow-500 mr-2"></i>Corporate Events</li>
+                        <li><i class="fas fa-star text-yellow-500 mr-2"></i>Shop Openings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Services Banner -->
+    <section class="py-8 md:py-12 gradient-bg text-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-around gap-6 md:gap-8">
+                <div class="flex items-center gap-3 md:gap-4 text-center md:text-left">
+                    <i class="fas fa-clock text-3xl md:text-5xl flex-shrink-0"></i>
+                    <div>
+                        <h3 class="text-lg md:text-2xl font-bold">Same-Day Service</h3>
+                        <p class="text-sm md:text-base text-purple-100">Quick turnaround for urgent events</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4 text-center md:text-left">
+                    <i class="fas fa-truck text-3xl md:text-5xl flex-shrink-0"></i>
+                    <div>
+                        <h3 class="text-lg md:text-2xl font-bold">On-Site Setup</h3>
+                        <p class="text-sm md:text-base text-purple-100">Professional team at your location</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 md:gap-4 text-center md:text-left">
+                    <i class="fas fa-sparkles text-3xl md:text-5xl flex-shrink-0"></i>
+                    <div>
+                        <h3 class="text-lg md:text-2xl font-bold">Custom Designs</h3>
+                        <p class="text-sm md:text-base text-purple-100">Tailored to your vision</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Location Section -->
+    <section id="about" class="py-12 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 md:mb-6">About Party Wonders</h2>
+                    <p class="text-base md:text-lg text-gray-600 mb-4 md:mb-6">We are Hyderabad's premier event decoration and florist service, specializing in transforming ordinary spaces into extraordinary celebrations. With years of experience and a passion for perfection, we bring your dream events to life.</p>
+                    
+                    <div class="space-y-3 md:space-y-4">
+                        <div class="flex items-start gap-3 md:gap-4">
+                            <i class="fas fa-map-marker-alt text-purple-600 text-xl md:text-2xl mt-1 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 text-sm md:text-base">Our Location</h4>
+                                <p class="text-gray-600 text-xs md:text-sm">Plot No 8, Shop No. 1, Near KISAN FASHION MALL<br>Green Park Road, Quthbullapur<br>Hyderabad, Telangana 500067</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-3 md:gap-4">
+                            <i class="fas fa-phone text-purple-600 text-xl md:text-2xl mt-1 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 text-sm md:text-base">Contact Us</h4>
+                                <p class="text-gray-600 text-xs md:text-sm">+91 93465 66373</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-3 md:gap-4">
+                            <i class="fas fa-envelope text-purple-600 text-xl md:text-2xl mt-1 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 text-sm md:text-base">Email</h4>
+                                <p class="text-gray-600 text-xs md:text-sm">Mothukunaveen2699@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-3 md:p-4 rounded-2xl md:rounded-3xl shadow-xl">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.7662774889844!2d78.44721!3d17.50678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDMwJzI0LjQiTiA3OMKwMjYnNDkuOSJF!5e0!3m2!1sen!2sin!4v1234567890" 
+                        width="100%" 
+                        height="300"
+                        class="md:h-96"
+                        style="border:0; border-radius: 20px;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section id="booking" class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-2 md:mb-4">Book Your Event</h2>
+                <p class="text-base md:text-xl text-gray-600">Let's make your celebration unforgettable</p>
+            </div>
+            
+            <form class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 md:p-12 rounded-2xl md:rounded-3xl shadow-xl">
+                <div class="grid md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2 text-sm md:text-base">Your Name *</label>
+                        <input type="text" required class="w-full px-4 py-2 md:py-3 rounded-xl border border-purple-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition text-sm md:text-base" placeholder="Enter your name">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2 text-sm md:text-base">Phone Number *</label>
+                        <input type="tel" required class="w-full px-4 py-2 md:py-3 rounded-xl border border-purple-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition text-sm md:text-base" placeholder="+91 XXXXX XXXXX">
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2 text-sm md:text-base">Event Date *</label>
+                        <input type="date" required class="w-full px-4 py-2 md:py-3 rounded-xl border border-purple-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition text-sm md:text-base">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2 text-sm md:text-base">Event Type *</label>
+                        <select required class="w-full px-4 py-2 md:py-3 rounded-xl border border-purple-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition text-sm md:text-base">
+                            <option value="">Select Event Type</option>
+                            <option value="birthday">Birthday Party</option>
+                            <option value="balloon">Balloon Decoration</option>
+                            <option value="kids-theme">Kids Theme Party</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="romantic">Romantic Room</option>
+                            <option value="baby-shower">Baby Shower</option>
+                            <option value="welcome-baby">Welcome Baby</option>
+                            <option value="naming">Naming Ceremony</option>
+                            <option value="engagement">Engagement</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="reception">Reception</option>
+                            <option value="haldi-mehndi">Haldi & Mehndi</option>
+                            <option value="corporate">Corporate Event</option>
+                            <option value="shop-opening">Shop Opening</option>
+                            <option value="festival">Festival Decoration</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="mb-4 md:mb-6">
+                    <label class="block text-gray-700 font-semibold mb-2 text-sm md:text-base">Budget Range</label>
+                    <select class="w-full px-4 py-2 md:py-3 rounded-xl border border-purple-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition text-sm md:text-base">
+                        <option value="">Select Budget Range</option>
+                        <option value="5000-10000">₹5,000 - ₹10,000</option>
+                        <option value="10000-25000">₹10,000 - ₹25,000</option>
+                        <option value="25000-50000">₹25,000 - ₹50,000</option>
+                        <option value="50000+">₹50,000+</option>
+                        <option value="custom">Custom Budget</option>
+                    </select>
+                </div>
+                
+                <div class="mb-4 md:mb-6">
+                    <label class="block text-gray-700 font-semibold mb-2 text-sm md:text-base">Additional Details</label>
+                    <textarea rows="4" class="w-full px-4 py-2 md:py-3 rounded-xl border border-purple-200 focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition text-sm md:text-base" placeholder="Tell us about your vision, venue, guest count, or any special requirements..."></textarea>
+                </div>
+                
+                <button type="submit" class="w-full bg-purple-600 text-white py-3 md:py-4 rounded-xl font-semibold text-base md:text-lg hover:bg-purple-700 transition shadow-lg hover:shadow-xl">
+                    <i class="fas fa-paper-plane mr-2"></i>Submit Booking Request
+                </button>
+                
+                <p class="text-center text-gray-600 text-xs md:text-sm mt-4">We'll contact you within 24 hours to confirm availability</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 md:py-12">
+        <div class="container mx-auto px-4">
+            <div class="footer-grid gap-6 md:gap-8 mb-6 md:mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-3 md:mb-4 justify-center md:justify-start">
+                        <i class="fas fa-gifts text-purple-400 text-2xl md:text-3xl"></i>
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold">Party Wonders</h3>
+                            <p class="text-xs md:text-sm text-gray-400">& Florist Store</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-xs md:text-sm">Creating magical moments for every celebration in Hyderabad.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Quick Links</h4>
+                    <ul class="space-y-1 md:space-y-2 text-gray-400 text-xs md:text-sm">
+                        <li><a href="#home" class="hover:text-purple-400 transition">Home</a></li>
+                        <li><a href="#services" class="hover:text-purple-400 transition">Services</a></li>
+                        <li><a href="#about" class="hover:text-purple-400 transition">About Us</a></li>
+                        <li><a href="#booking" class="hover:text-purple-400 transition">Book Now</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Services</h4>
+                    <ul class="space-y-1 md:space-y-2 text-gray-400 text-xs md:text-sm">
+                        <li>Party Decoration</li>
+                        <li>Flower Services</li>
+                        <li>Wedding & Events</li>
+                        <li>Corporate Gifts</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-base md:text-lg font-semibold mb-3 md:mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400 text-xs md:text-sm">
+                        <li class="flex items-center gap-2 justify-center md:justify-start">
+                            <i class="fas fa-phone text-purple-400"></i>
+                            +91 93465 66373
+                        </li>
+                        <li class="flex items-center gap-2 justify-center md:justify-start">
+                            <i class="fas fa-envelope text-purple-400"></i>
+                            Mothukunaveen2699@gmail.com
+                        </li>
+                        <li class="flex items-center gap-2 justify-center md:justify-start">
+                            <i class="fas fa-map-marker-alt text-purple-400"></i>
+                            <span>Quthbullapur, Hyderabad</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-6 md:pt-8 text-center text-gray-400 text-xs md:text-sm">
+                <p>&copy; 2025 Party Wonders & Florist Store. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-action fixed z-50 flex flex-col gap-3">
+        <a href="https://wa.me/919346566373" target="_blank" class="floating-btn bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 group relative">
+            <i class="fab fa-whatsapp text-2xl md:text-3xl"></i>
+            <span class="absolute right-20 bg-gray-900 text-white px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap text-sm hidden md:inline-block">Chat on WhatsApp</span>
+        </a>
+        
+        <a href="tel:+919346566373" class="floating-btn bg-blue-500 hover:bg-blue-600 text-white rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 group relative pulse">
+            <i class="fas fa-phone-alt text-xl md:text-2xl"></i>
+            <span class="absolute right-20 bg-gray-900 text-white px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap text-sm hidden md:inline-block">Call Now</span>
+        </a>
+    </div>
+
+    <script>
+        function initCarousel(containerId, prevBtnId, nextBtnId, dotsId) {
+            const container = document.getElementById(containerId);
+            const prevBtn = document.getElementById(prevBtnId);
+            const nextBtn = document.getElementById(nextBtnId);
+            const dotsContainer = document.getElementById(dotsId);
+            
+            if (!container || !prevBtn || !nextBtn || !dotsContainer) return;
+            
+            const slides = container.querySelectorAll('.carousel-slide');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            let autoSlideInterval;
+
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot' + (i === 0 ? ' active' : '');
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+
+            const dots = dotsContainer.querySelectorAll('.dot');
+
+            function updateCarousel() {
+                container.style.transform = `translateX(-${currentSlide * 100}%)`;
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateCarousel();
+                resetAutoSlide();
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+                resetAutoSlide();
+            }
+
+            function goToSlide(index) {
+                currentSlide = index;
+                updateCarousel();
+                resetAutoSlide();
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(() => {
+                    currentSlide = (currentSlide + 1) % totalSlides;
+                    updateCarousel();
+                }, 5000);
+            }
+
+            function resetAutoSlide() {
+                clearInterval(autoSlideInterval);
+                startAutoSlide();
+            }
+
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+
+            startAutoSlide();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initCarousel('carouselContainerMobile', 'prevBtnMobile', 'nextBtnMobile', 'dotsMobile');
+            initCarousel('carouselContainerDesktop', 'prevBtnDesktop', 'nextBtnDesktop', 'dotsDesktop');
+        });
+    </script>
+
+</body>
+</html>
