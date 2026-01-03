@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - Party Wonders & Florist Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .terms-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .terms-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .terms-section h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .terms-section h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #374151;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .terms-section p {
+            color: #4b5563;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .terms-section ul {
+            list-style-position: inside;
+            color: #4b5563;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .terms-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .terms-section ul li strong {
+            color: #667eea;
+        }
+
+        .terms-toc {
+            background: linear-gradient(135deg, #f5f7ff 0%, #f0e7ff 100%);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e9d5ff;
+        }
+
+        .terms-toc h3 {
+            margin-top: 0;
+        }
+
+        .terms-toc ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .terms-toc li {
+            margin-bottom: 0.75rem;
+        }
+
+        .terms-toc a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .terms-toc a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0.5rem;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #f5f7ff 0%, #f0e7ff 100%);
+            border: 1px solid #e9d5ff;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-box h3 {
+            margin-top: 0;
+        }
+
+        .contact-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .contact-box li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-box i {
+            color: #667eea;
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+
+        .contact-box a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-box a:hover {
+            color: #764ba2;
+        }
+
+        @media (max-width: 768px) {
+            .terms-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .terms-section h3 {
+                font-size: 1.1rem;
+            }
+
+            .terms-container {
+                padding: 0 1rem;
+            }
+
+            .contact-box {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-40">
+        <div class="container mx-auto px-4 py-3 md:py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <i class="fas fa-gifts text-purple-600 text-2xl md:text-3xl"></i>
+                    <div>
+                        <h1 class="text-lg md:text-2xl font-bold text-gray-800">Party Wonders</h1>
+                        <p class="text-xs text-gray-500">& Florist Store</p>
+                    </div>
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html#home" class="text-gray-700 hover:text-purple-600 transition">Home</a>
+                    <a href="index.html#services" class="text-gray-700 hover:text-purple-600 transition">Services</a>
+                    <a href="index.html#gallery" class="text-gray-700 hover:text-purple-600 transition">Gallery</a>
+                    <a href="index.html#about" class="text-gray-700 hover:text-purple-600 transition">About</a>
+                    <a href="index.html#booking" class="text-gray-700 hover:text-purple-600 transition">Book Now</a>
+                </div>
+                <a href="tel:+919346566373" class="hidden md:block bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition text-sm">
+                    <i class="fas fa-phone mr-2"></i>Call Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="gradient-bg text-white pt-24 md:pt-32 pb-12 md:pb-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Terms & Conditions</h1>
+            <p class="text-lg text-purple-100">Last Updated: January 3, 2026</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-12 md:py-20 bg-gray-50">
+        <div class="terms-container">
+            
+            <!-- Table of Contents -->
+            <div class="terms-toc">
+                <h3 class="text-xl font-bold mb-4">Table of Contents</h3>
+                <ul>
+                    <li><a href="#agreement">1. Agreement to Terms</a></li>
+                    <li><a href="#services">2. Our Services</a></li>
+                    <li><a href="#booking">3. Booking & Reservation Policy</a></li>
+                    <li><a href="#payment">4. Payment Terms</a></li>
+                    <li><a href="#cancellation">5. Cancellation & Refund Policy</a></li>
+                    <li><a href="#liability">6. Limitation of Liability</a></li>
+                    <li><a href="#user-conduct">7. User Conduct</a></li>
+                    <li><a href="#intellectual">8. Intellectual Property</a></li>
+                    <li><a href="#dispute">9. Dispute Resolution</a></li>
+                    <li><a href="#changes">10. Changes to Terms</a></li>
+                    <li><a href="#contact">11. Contact Information</a></li>
+                </ul>
+            </div>
+
+            <!-- 1. Agreement to Terms -->
+            <div class="terms-section" id="agreement">
+                <h2>1. Agreement to Terms</h2>
+                <p>By accessing and using this website (www.partywonders.com) and our services, you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, please do not use our services. Party Wonders & Florist Store reserves the right to modify these terms at any time without prior notice.</p>
+                <p>These terms apply to all customers, clients, and users of our website and services in Hyderabad and surrounding areas.</p>
+            </div>
+
+            <!-- 2. Our Services -->
+            <div class="terms-section" id="services">
+                <h2>2. Our Services</h2>
+                <p>Party Wonders & Florist Store offers comprehensive event decoration and flower services including:</p>
+                <ul>
+                    <li>Event decoration and setup for parties, birthdays, and celebrations</li>
+                    <li>Fresh flower arrangements, bouquets, and floral designs</li>
+                    <li>Wedding decoration and mandap setup</li>
+                    <li>Corporate event services and shop opening decorations</li>
+                    <li>Gift hampers, chocolate bouquets, and custom gifts</li>
+                    <li>On-site decoration, installation, and setup services</li>
+                    <li>Theme-based party decorations and balloon arrangements</li>
+                    <li>Vehicle decoration and romantic room setups</li>
+                </ul>
+                <p>Service details, availability, pricing, and specific requirements are provided on our website and in quotations. All services are subject to availability and customer confirmation.</p>
+            </div>
+
+            <!-- 3. Booking & Reservation Policy -->
+            <div class="terms-section" id="booking">
+                <h2>3. Booking & Reservation Policy</h2>
+                
+                <h3>3.1 Booking Process</h3>
+                <p>To book our services, you must:</p>
+                <ul>
+                    <li>Fill out the booking form with accurate and complete information</li>
+                    <li>Receive and confirm a detailed quotation from our team</li>
+                    <li>Pay the required advance payment or deposit as per our payment schedule</li>
+                    <li>Receive a booking confirmation via email or phone</li>
+                </ul>
+
+                <h3>3.2 Advance Booking Requirements</h3>
+                <p>We recommend booking at least:</p>
+                <ul>
+                    <li><strong>Standard Events (Birthdays, Anniversaries):</strong> 7-14 days in advance</li>
+                    <li><strong>Weddings & Large Events:</strong> 30+ days in advance</li>
+                    <li><strong>Corporate Events:</strong> 15-20 days in advance</li>
+                    <li><strong>Same-Day Bookings:</strong> Subject to availability; additional charges of 20-30% may apply</li>
+                </ul>
+
+                <h3>3.3 Venue Access & Requirements</h3>
+                <p>You must ensure that:</p>
+                <ul>
+                    <li>We have proper access to the venue for setup and decoration</li>
+                    <li>The venue has adequate space for our team and equipment</li>
+                    <li>You have the authority to use the venue</li>
+                    <li>All restrictions, permissions, and special requirements are communicated at booking</li>
+                    <li>Venue contact person is available on the day of the event</li>
+                </ul>
+                <p>Additional charges may apply for:</p>
+                <ul>
+                    <li>Venues located more than 15 km from our location (Quthbullapur)</li>
+                    <li>Difficult-to-access or multi-level venues</li>
+                    <li>Extended setup time or overtime services</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>Important:</strong> Confirming your booking implies that you have the authority to use the venue and that all participants agree to our services being provided. You are responsible for obtaining all necessary permissions and ensuring safe access for our team.
+                </div>
+            </div>
+
+            <!-- 4. Payment Terms -->
+            <div class="terms-section" id="payment">
+                <h2>4. Payment Terms</h2>
+                
+                <h3>4.1 Payment Structure</h3>
+                <ul>
+                    <li><strong>Advance Payment:</strong> 50% of the total cost due at the time of booking (to confirm reservation)</li>
+                    <li><strong>Final Payment:</strong> Remaining 50% due 3 days before the event date</li>
+                    <li><strong>Accepted Payment Methods:</strong> Credit/Debit Card, UPI, Online Bank Transfer, or Cash</li>
+                </ul>
+
+                <h3>4.2 Payment Processing</h3>
+                <p>All payments are processed securely through authorized payment gateways. We do not store credit card details on our servers. Payment made is non-refundable once processed, except as per our refund policy stated in Section 5.</p>
+
+                <h3>4.3 Taxes & Additional Charges</h3>
+                <p>All prices mentioned are inclusive of GST (Goods and Services Tax) as applicable in India. Additional charges may apply for:</p>
+                <ul>
+                    <li>Travel and transportation beyond 15 km from Quthbullapur</li>
+                    <li>Customized designs and special artistic requests</li>
+                    <li>Rush/emergency bookings or last-minute changes</li>
+                    <li>Extended setup time beyond 6 hours of standard service</li>
+                    <li>Late-night or early-morning event setups</li>
+                    <li>Premium flowers or imported materials (prices vary)</li>
+                </ul>
+
+                <h3>4.4 Late Payment Consequences</h3>
+                <p>If the final payment is not received by the specified due date, Party Wonders & Florist Store reserves the right to:</p>
+                <ul>
+                    <li>Cancel the booking without further notice</li>
+                    <li>Forfeit the advance payment</li>
+                    <li>Not provide the services on the scheduled date</li>
+                </ul>
+
+                <h3>4.5 Price Changes</h3>
+                <p>Prices quoted are valid for 7 days from the quotation date. We reserve the right to revise prices if confirmation is delayed beyond this period.</p>
+            </div>
+
+            <!-- 5. Cancellation & Refund Policy -->
+            <div class="terms-section" id="cancellation">
+                <h2>5. Cancellation & Refund Policy</h2>
+                
+                <h3>5.1 Customer Cancellation Policy</h3>
+                <p>Refund amounts based on cancellation notice period:</p>
+                <ul>
+                    <li><strong>More than 30 days before event:</strong> 80% refund of advance payment</li>
+                    <li><strong>15-30 days before event:</strong> 50% refund of advance payment</li>
+                    <li><strong>7-14 days before event:</strong> 25% refund of advance payment</li>
+                    <li><strong>Less than 7 days:</strong> No refund (advance payment forfeited)</li>
+                    <li><strong>Day of event or no-show:</strong> 0% refund; full amount payable</li>
+                </ul>
+
+                <h3>5.2 Event Postponement</h3>
+                <p>If you wish to postpone your event to another date:</p>
+                <ul>
+                    <li>You must inform us at least 14 days before the original event date</li>
+                    <li>The advance payment can be adjusted towards the new date without additional charges</li>
+                    <li>New date must be confirmed within 3 months of original booking</li>
+                    <li>Postponement is subject to availability and service confirmation</li>
+                </ul>
+
+                <h3>5.3 Company Cancellation</h3>
+                <p>Party Wonders & Florist Store reserves the right to cancel services under the following circumstances:</p>
+                <ul>
+                    <li>The final payment is not received by the specified due date</li>
+                    <li>The requested services are technically impossible, unsafe, or illegal</li>
+                    <li>The customer engages in abusive or inappropriate behavior</li>
+                    <li>Unforeseen circumstances make service delivery impossible</li>
+                </ul>
+                <p>In such cases, a full refund of all payments received will be provided, or we will reschedule the event at our earliest convenience without additional charges.</p>
+
+                <h3>5.4 Force Majeure</h3>
+                <p>We are not liable for cancellations or service disruptions due to:</p>
+                <ul>
+                    <li>Natural disasters (earthquakes, floods, storms, etc.)</li>
+                    <li>Government restrictions or lockdowns</li>
+                    <li>Pandemics or health emergencies</li>
+                    <li>Extreme weather conditions making setup impossible</li>
+                    <li>Venue unavailability due to circumstances beyond our control</li>
+                </ul>
+                <p>In such cases, we will attempt to reschedule your event at the earliest possible date at no additional cost, or provide a full refund of the advance payment.</p>
+            </div>
+
+            <!-- 6. Limitation of Liability -->
+            <div class="terms-section" id="liability">
+                <h2>6. Limitation of Liability</h2>
+                
+                <h3>6.1 Service Disclaimer</h3>
+                <p>Our services are provided on an "as is" basis. While we strive to deliver high-quality decorations and arrangements, we cannot guarantee specific outcomes or absolute client satisfaction due to:</p>
+                <ul>
+                    <li>Venue conditions and limitations</li>
+                    <li>Weather conditions and environmental factors</li>
+                    <li>Guest behavior and event management</li>
+                    <li>Flower availability and seasonal variations</li>
+                </ul>
+
+                <h3>6.2 What We Are NOT Responsible For</h3>
+                <p>Party Wonders & Florist Store is not responsible for:</p>
+                <ul>
+                    <li>Damage to the venue, existing furniture, or walls during setup</li>
+                    <li>Damage to our decorations caused by weather, guests, or venue conditions</li>
+                    <li>Loss, theft, or damage of decorations or equipment post-installation</li>
+                    <li>Injuries to guests, participants, or third parties</li>
+                    <li>Event cancellations by the client, guests, or third parties</li>
+                    <li>Perishability of flowers or materials (natural decomposition)</li>
+                    <li>Allergic reactions to flowers or materials</li>
+                    <li>Venue unavailability or access issues</li>
+                </ul>
+
+                <h3>6.3 Maximum Liability</h3>
+                <p>Our maximum liability is limited to the total amount paid for services. We are not liable for indirect, incidental, consequential, or punitive damages.</p>
+
+                <h3>6.4 Photographic/Video Rights</h3>
+                <p>By booking our services, you grant us permission to photograph/video our decorations at your event for promotional and portfolio purposes. We may use these images on our website, social media, or marketing materials.</p>
+            </div>
+
+            <!-- 7. User Conduct -->
+            <div class="terms-section" id="user-conduct">
+                <h2>7. User Conduct</h2>
+                <p>When using our services and website, you agree to:</p>
+                <ul>
+                    <li>Provide accurate, truthful, and complete information</li>
+                    <li>Not engage in illegal, fraudulent, abusive, or deceptive behavior</li>
+                    <li>Treat our staff and team members with respect and courtesy</li>
+                    <li>Respect the intellectual property and privacy of others</li>
+                    <li>Not harass, threaten, or abuse our team members</li>
+                    <li>Not attempt to access unauthorized areas of our website</li>
+                    <li>Not share your account credentials with unauthorized persons</li>
+                    <li>Not misuse or manipulate our services</li>
+                    <li>Comply with all local laws and regulations</li>
+                </ul>
+                <p>Violation of these conduct terms may result in:</p>
+                <ul>
+                    <li>Immediate termination of services</li>
+                    <li>Forfeiture of advance payment</li>
+                    <li>Exclusion from future services</li>
+                    <li>Legal action as applicable</li>
+                </ul>
+            </div>
+
+            <!-- 8. Intellectual Property -->
+            <div class="terms-section" id="intellectual">
+                <h2>8. Intellectual Property Rights</h2>
+                <p>All content on our website, including text, images, logos, designs, graphics, and decorative concepts, is the property of Party Wonders & Florist Store or its content suppliers and is protected by copyright laws.</p>
+                <p>You may not reproduce, distribute, modify, or transmit any content without our prior written permission. We grant you a limited, non-exclusive license to view and print content for personal, non-commercial use only.</p>
+                <p>You retain ownership of any personal content you submit (such as event photos or specifications). By submitting content, you grant us perpetual permission to use it for marketing, promotional, and portfolio purposes on our website and social media channels.</p>
+            </div>
+
+            <!-- 9. Dispute Resolution -->
+            <div class="terms-section" id="dispute">
+                <h2>9. Dispute Resolution</h2>
+                
+                <h3>9.1 Informal Resolution</h3>
+                <p>If you have a complaint or dispute regarding our services, please contact us immediately with detailed information. We will attempt to resolve the matter within 7 business days of receiving your complaint.</p>
+
+                <h3>9.2 Formal Mediation</h3>
+                <p>If informal resolution fails, both parties agree to attempt mediation through a neutral third party before pursuing legal action. The cost of mediation will be shared equally.</p>
+
+                <h3>9.3 Jurisdiction & Applicable Law</h3>
+                <p>These Terms and Conditions are governed by the laws of India, specifically the laws applicable in Telangana state. Any legal action or proceeding related to these terms must be brought exclusively in the courts of Hyderabad, Telangana.</p>
+
+                <h3>9.4 Arbitration</h3>
+                <p>For disputes exceeding the jurisdiction of consumer courts, both parties agree to binding arbitration as per the Indian Arbitration and Conciliation Act, 1996.</p>
+            </div>
+
+            <!-- 10. Changes to Terms -->
+            <div class="terms-section" id="changes">
+                <h2>10. Changes to Terms</h2>
+                <p>Party Wonders & Florist Store reserves the right to modify these Terms and Conditions at any time. Changes will be effective immediately upon posting to the website. Your continued use of our services following any changes constitutes your acceptance of the new terms.</p>
+                <p>We will notify you of significant changes via email or prominent notice on our website. It is your responsibility to review these terms periodically for updates.</p>
+            </div>
+
+            <!-- 11. Contact Information -->
+            <div class="terms-section" id="contact">
+                <h2>11. Contact Information</h2>
+                <p>For questions, concerns, or clarifications regarding these Terms & Conditions, please contact us:</p>
+                
+                <div class="contact-box">
+                    <h3>Party Wonders & Florist Store</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email:</strong><br>
+                                <a href="mailto:Mothukunaveen2699@gmail.com">Mothukunaveen2699@gmail.com</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone:</strong><br>
+                                <a href="tel:+919346566373">+91 93465 66373</a><br>
+                                <span class="text-sm text-gray-600">Available: 9 AM - 9 PM, 7 days a week</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Address:</strong><br>
+                                Plot No 8, Shop No. 1<br>
+                                Near KISAN FASHION MALL<br>
+                                Green Park Road, Quthbullapur<br>
+                                Hyderabad, Telangana 500067<br>
+                                India
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 md:py-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-400 text-sm mb-4">&copy; 2025 Party Wonders & Florist Store. All rights reserved.</p>
+            <div class="flex gap-4 justify-center text-sm flex-wrap">
+                <a href="index.html" class="text-gray-400 hover:text-purple-400 transition">Home</a>
+                <span class="text-gray-600">|</span>
+                <a href="privacy-policy.html" class="text-gray-400 hover:text-purple-400 transition">Privacy Policy</a>
+                <span class="text-gray-600">|</span>
+                <a href="terms-conditions.html" class="text-gray-400 hover:text-purple-400 transition">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
