@@ -1,0 +1,139 @@
+{
+  "gallery": [
+    {
+      "id": 1,
+      "title": "Colorful Birthday Bash",
+      "description": "Vibrant balloon decorations for kids birthday",
+      "category": "birthday",
+      "thumbnail": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&q=80",
+      "fullImage": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1200&q=80",
+      "alt": "Colorful Birthday Bash"
+    },
+    {
+      "id": 2,
+      "title": "Wedding Reception",
+      "description": "Elegant flower arrangements and stage setup",
+      "category": "wedding",
+      "thumbnail": "https://images.unsplash.com/photo-1519167758481-dc80c3ceab47?w=400&q=80",
+      "fullImage": "https://images.unsplash.com/photo-1519167758481-dc80c3ceab47?w=1200&q=80",
+      "alt": "Elegant Wedding Reception"
+    },
+    {
+      "id": 3,
+      "title": "Fresh Rose Bouquets",
+      "description": "Premium quality fresh flowers arrangement",
+      "category": "flowers",
+      "thumbnail": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400&q=80",
+      "fullImage": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=1200&q=80",
+      "alt": "Fresh Rose Bouquets"
+    },
+    {
+      "id": 4,
+      "title": "Corporate Event Setup",
+      "description": "Professional event decoration services",
+      "category": "corporate",
+      "thumbnail": "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=400&q=80",
+      "fullImage": "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=1200&q=80",
+      "alt": "Corporate Event Setup"
+    },
+    {
+      "id": 5,
+      "title": "Kids Theme Party",
+      "description": "Creative theme-based birthday decoration",
+      "category": "birthday",
+      "thumbnail": "https://images.unsplash.com/photo-1540575467063-178f50002cbc?w=400&q=80",
+      "fullImage": "https://images.unsplash.com/photo-1540575467063-178f50002cbc?w=1200&q=80",
+      "alt": "Kids Theme Party"
+    },
+    {
+      "id": 6,
+      "title": "Mandap Decoration",
+      "description": "Traditional wedding mandap decoration",
+      "category": "wedding",
+      "thumbnail": "https://images.unsplash.com/photo-1514888286974-6c03bf1a4dfe?w=400&q=80",
+      "fullImage": "https://images.unsplash.com/photo-1514888286974-6c03bf1a4dfe?w=1200&q=80",
+      "alt": "Mandap Decoration"
+    },
+    {
+      "id": 7,
+      "title": "Custom Arrangements",
+      "description": "Bespoke flower arrangements for any occasion",
+      "category": "flowers",
+      "thumbnail": "https://images.unsplash.com/photo-1550366910-75b85e08b531?w=400&q=80",
+      "fullImage": "https://images.unsplash.com/photo-1550366910-75b85e08b531?w=1200&q=80",
+      "alt": "Custom Arrangements"
+    },
+    {
+      "id": 8,
+      "title": "Shop Opening",
+      "description": "Grand opening decoration services",
+      "category": "corporate",
+      "thumbnail": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80",
+      "fullImage": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80",
+      "alt": "Shop Opening"
+    },
+    {
+      "id": 9,
+      "title": "Romantic Anniversary",
+      "description": "Romantic celebration decoration",
+      "category": "anniversary",
+      "thumbnail": "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=400&q=80",
+      "fullImage": "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=1200&q=80",
+      "alt": "Romantic Anniversary"
+    },
+    {
+      "id": 10,
+      "title": "Wedding Flowers",
+      "description": "Premium wedding flower arrangements",
+      "category": "flowers",
+      "thumbnail": "https://images.unsplash.com/photo-1518531933037-91b2f5f9cc6f?w=400&q=80",
+      "fullImage": "https://images.unsplash.com/photo-1518531933037-91b2f5f9cc6f?w=1200&q=80",
+      "alt": "Wedding Flowers"
+    },
+    {
+      "id": 11,
+      "title": "Party Balloons",
+      "description": "Fun and colorful balloon decorations",
+      "category": "birthday",
+      "thumbnail": "https://images.unsplash.com/photo-1534353436294-47dee155fc27?w=400&q=80",
+      "fullImage": "https://images.unsplash.com/photo-1534353436294-47dee155fc27?w=1200&q=80",
+      "alt": "Party Balloons"
+    },
+    {
+      "id": 12,
+      "title": "Wedding Arch",
+      "description": "Beautiful decorative wedding arch",
+      "category": "wedding",
+      "thumbnail": "https://images.unsplash.com/photo-1507699622457-641587a604d0?w=400&q=80",
+      "fullImage": "https://images.unsplash.com/photo-1507699622457-641587a604d0?w=1200&q=80",
+      "alt": "Wedding Arch"
+    },
+    {
+      "id": 13,
+      "title": "Floral Gate Entrance",
+      "description": "Stunning floral entrance gate decoration",
+      "category": "wedding",
+      "thumbnail": "https://images.unsplash.com/photo-1519915212116-7cfef71f1d4e?w=400&q=80",
+      "fullImage": "https://images.unsplash.com/photo-1519915212116-7cfef71f1d4e?w=1200&q=80",
+      "alt": "Floral Gate Entrance"
+    },
+    {
+      "id": 14,
+      "title": "Table Centerpieces",
+      "description": "Elegant table flower arrangements",
+      "category": "flowers",
+      "thumbnail": "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=400&q=80",
+      "fullImage": "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=1200&q=80",
+      "alt": "Table Centerpieces"
+    },
+    {
+      "id": 15,
+      "title": "Anniversary Decor",
+      "description": "Romantic anniversary setup with flowers",
+      "category": "anniversary",
+      "thumbnail": "https://images.unsplash.com/photo-1519915212116-7cfef71f1d4e?w=400&q=80",
+      "fullImage": "https://images.unsplash.com/photo-1519915212116-7cfef71f1d4e?w=1200&q=80",
+      "alt": "Anniversary Decor"
+    }
+  ]
+}
