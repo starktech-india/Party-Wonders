@@ -1,4 +1,4 @@
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         
         * {
             font-family: 'Poppins', sans-serif;
@@ -756,4 +756,105 @@
             margin: 0;
             font-size: 0.75rem;
             color: #94a3b8;
+        }
+
+        /* Gallery Preview Section Styles */
+        .gallery-grid {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gallery-item {
+            animation: fadeIn 0.5s ease-in;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+        }
+
+        .gallery-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image-wrapper {
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .gallery-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Mobile Optimizations for Gallery */
+        @media (max-width: 640px) {
+            .gallery-image-wrapper {
+                height: 200px;
+            }
+
+            .gallery-image-wrapper h3 {
+                font-size: 1rem;
+            }
+
+            .gallery-image-wrapper p {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .gallery-image-wrapper {
+                height: 260px;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .gallery-image-wrapper {
+                height: 300px;
+            }
+        }
+
+        /* Explore Button Animation */
+        a[href="gallery.html"] {
+            position: relative;
+            overflow: hidden;
+        }
+
+        a[href="gallery.html"]::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.5s ease;
+        }
+
+        a[href="gallery.html"]:hover::before {
+            left: 100%;
+        }
+
+        /* Responsive Button */
+        @media (max-width: 768px) {
+            a[href="gallery.html"] {
+                padding: 0.75rem 1.5rem;
+                font-size: 1rem;
+            }
         }
