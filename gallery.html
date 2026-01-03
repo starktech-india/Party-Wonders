@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Gallery - Party Wonders & Florist Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        /* Gallery Filter Styles */
+        .gallery-filter {
+            background: white;
+            color: #4b5563;
+            border: 2px solid #e5e7eb;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-filter:hover {
+            border-color: #667eea;
+            color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .gallery-filter.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @media (min-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .gallery-grid {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Gallery Item */
+        .gallery-item {
+            animation: fadeIn 0.5s ease-in;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item.hidden {
+            display: none;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+        }
+
+        /* Gallery Image Wrapper */
+        .gallery-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            rounded: 1rem;
+            height: 280px;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+            cursor: pointer;
+            border-radius: 1rem;
+        }
+
+        .gallery-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .gallery-item:hover .gallery-image-wrapper img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 1.5rem;
+            border-radius: 1rem;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-content {
+            color: white;
+            width: 100%;
+        }
+
+        .gallery-content h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .gallery-content p {
+            font-size: 0.875rem;
+            margin: 0;
+            color: #d1d5db;
+        }
+
+        .gallery-icon {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-icon {
+            opacity: 1;
+        }
+
+        /* Stats Section */
+        .gallery-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            text-center;
+            margin: 3rem 0;
+        }
+
+        .stat-item {
+            padding: 2rem;
+            background: linear-gradient(135deg, #f5f7ff 0%, #f0e7ff 100%);
+            border-radius: 1rem;
+            border: 1px solid #e9d5ff;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #667eea;
+            display: block;
+        }
+
+        .stat-label {
+            color: #4b5563;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Lightbox Customization */
+        .lb-image {
+            border-radius: 1rem;
+        }
+
+        .lightbox {
+            border-radius: 1rem;
+        }
+
+        @media (max-width: 640px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 1rem;
+            }
+
+            .gallery-image-wrapper {
+                height: 180px;
+            }
+
+            .gallery-overlay {
+                padding: 1rem;
+            }
+
+            .gallery-content h3 {
+                font-size: 1rem;
+            }
+
+            .gallery-content p {
+                font-size: 0.75rem;
+            }
+
+            .gallery-stats {
+                gap: 1rem;
+            }
+
+            .stat-item {
+                padding: 1rem;
+            }
+
+            .stat-number {
+                font-size: 1.875rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-40">
+        <div class="container mx-auto px-4 py-3 md:py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-2">
+                    <i class="fas fa-gifts text-purple-600 text-2xl md:text-3xl"></i>
+                    <div>
+                        <h1 class="text-lg md:text-2xl font-bold text-gray-800">Party Wonders</h1>
+                        <p class="text-xs text-gray-500">& Florist Store</p>
+                    </div>
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html#home" class="text-gray-700 hover:text-purple-600 transition">Home</a>
+                    <a href="index.html#services" class="text-gray-700 hover:text-purple-600 transition">Services</a>
+                    <a href="gallery.html" class="text-purple-600 font-semibold">Gallery</a>
+                    <a href="index.html#about" class="text-gray-700 hover:text-purple-600 transition">About</a>
+                    <a href="index.html#booking" class="text-gray-700 hover:text-purple-600 transition">Book Now</a>
+                </div>
+                <a href="tel:+919346566373" class="hidden md:block bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition text-sm">
+                    <i class="fas fa-phone mr-2"></i>Call Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="gradient-bg text-white pt-24 md:pt-32 pb-12 md:pb-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Event Gallery</h1>
+            <p class="text-lg text-purple-100">Explore our creative event decorations and beautiful flower arrangements</p>
+        </div>
+    </section>
+
+    <!-- Gallery Stats -->
+    <section class="py-12 md:py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="gallery-stats">
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Events Completed</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Customer Satisfaction</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">8+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Awards & Recognition</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-12 md:py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 md:mb-16">
+                <button class="gallery-filter active px-4 md:px-6 py-2 md:py-3 rounded-full font-semibold text-sm md:text-base transition-all" data-filter="all">
+                    <i class="fas fa-th-large mr-2"></i>All Events
+                </button>
+                <button class="gallery-filter px-4 md:px-6 py-2 md:py-3 rounded-full font-semibold text-sm md:text-base transition-all" data-filter="birthday">
+                    <i class="fas fa-birthday-cake mr-2"></i>Birthday
+                </button>
+                <button class="gallery-filter px-4 md:px-6 py-2 md:py-3 rounded-full font-semibold text-sm md:text-base transition-all" data-filter="wedding">
+                    <i class="fas fa-heart mr-2"></i>Wedding
+                </button>
+                <button class="gallery-filter px-4 md:px-6 py-2 md:py-3 rounded-full font-semibold text-sm md:text-base transition-all" data-filter="flowers">
+                    <i class="fas fa-leaf mr-2"></i>Flowers
+                </button>
+                <button class="gallery-filter px-4 md:px-6 py-2 md:py-3 rounded-full font-semibold text-sm md:text-base transition-all" data-filter="corporate">
+                    <i class="fas fa-briefcase mr-2"></i>Corporate
+                </button>
+                <button class="gallery-filter px-4 md:px-6 py-2 md:py-3 rounded-full font-semibold text-sm md:text-base transition-all" data-filter="anniversary">
+                    <i class="fas fa-ring mr-2"></i>Anniversary
+                </button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                
+                <!-- Birthday Items -->
+                <div class="gallery-item" data-category="birthday">
+                    <div class="gallery-image-wrapper">
+                        <a href="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80" data-lightbox="gallery" data-title="Colorful Birthday Bash">
+                            <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=400&q=80" alt="Colorful Birthday Bash">
+                        </a>
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h3>Colorful Birthday Bash</h3>
+                                <p>Vibrant balloon decorations for kids birthday</p>
+                            </div>
+                        </div>
+                        <div class="gallery-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wedding Items -->
+                <div class="gallery-item" data-category="wedding">
+                    <div class="gallery-image-wrapper">
+                        <a href="https://images.unsplash.com/photo-1519167758481-dc80c3ceab47?w=800&q=80" data-lightbox="gallery" data-title="Elegant Wedding Reception">
+                            <img src="https://images.unsplash.com/photo-1519167758481-dc80c3ceab47?w=400&q=80" alt="Elegant Wedding Reception">
+                        </a>
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h3>Wedding Reception</h3>
+                                <p>Elegant flower arrangements and stage setup</p>
+                            </div>
+                        </div>
+                        <div class="gallery-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flowers Items -->
+                <div class="gallery-item" data-category="flowers">
+                    <div class="gallery-image-wrapper">
+                        <a href="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80" data-lightbox="gallery" data-title="Fresh Rose Bouquets">
+                            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400&q=80" alt="Fresh Rose Bouquets">
+                        </a>
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h3>Fresh Bouquets</h3>
+                                <p>Premium quality fresh flowers arrangement</p>
+                            </div>
+                        </div>
+                        <div class="gallery-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Corporate Items -->
+                <div class="gallery-item" data-category="corporate">
+                    <div class="gallery-image-wrapper">
+                        <a href="https://images.unsplash.com/photo-1464207687429-7505649dae38?w=800&q=80" data-lightbox="gallery" data-title="Corporate Event Setup">
+                            <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?w=400&q=80" alt="Corporate Event Setup">
+                        </a>
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h3>Corporate Setup</h3>
+                                <p>Professional event decoration services</p>
+                            </div>
+                        </div>
+                        <div class="gallery-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Birthday Item 2 -->
+                <div class="gallery-item" data-category="birthday">
+                    <div class="gallery-image-wrapper">
+                        <a href="https://images.unsplash.com/photo-1540575467063-178f50002cbc?w=800&q=80" data-lightbox="gallery" data-title="Kids Theme Party">
+                            <img src="https://images.unsplash.com/photo-1540575467063-178f50002cbc?w=400&q=80" alt="Kids Theme Party">
+                        </a>
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h3>Theme Party</h3>
+                                <p>Creative theme-based birthday decoration</p>
+                            </div>
+                        </div>
+                        <div class="gallery-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wedding Item 2 -->
+                <div class="gallery-item" data-category="wedding">
+                    <div class="gallery-image-wrapper">
+                        <a href="https://images.unsplash.com/photo-1514888286974-6c03bf1a4dfe?w=800&q=80" data-lightbox="gallery" data-title="Mandap Decoration">
+                            <img src="https://images.unsplash.com/photo-1514888286974-6c03bf1a4dfe?w=400&q=80" alt="Mandap Decoration">
+                        </a>
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h3>Mandap Setup</h3>
+                                <p>Traditional wedding mandap decoration</p>
+                            </div>
+                        </div>
+                        <div class="gallery-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flowers Item 2 -->
+                <div class="gallery-item" data-category="flowers">
+                    <div class="gallery-image-wrapper">
+                        <a href="https://images.unsplash.com/photo-1550366910-75b85e08b531?w=800&q=80" data-lightbox="gallery" data-title="Custom Arrangements">
+                            <img src="https://images.unsplash.com/photo-1550366910-75b85e08b531?w=400&q=80" alt="Custom Arrangements">
+                        </a>
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h3>Custom Design</h3>
+                                <p>Bespoke flower arrangements for any occasion</p>
+                            </div>
+                        </div>
+                        <div class="gallery-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Corporate Item 2 -->
+                <div class="gallery-item" data-category="corporate">
+                    <div class="gallery-image-wrapper">
+                        <a href="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" data-lightbox="gallery" data-title="Shop Opening">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80" alt="Shop Opening">
+                        </a>
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h3>Shop Opening</h3>
+                                <p>Grand opening decoration services</p>
+                            </div>
+                        </div>
+                        <div class="gallery-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anniversary Items -->
+                <div class="gallery-item" data-category="anniversary">
+                    <div class="gallery-image-wrapper">
+                        <a href="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&q=80" data-lightbox="gallery" data-title="Romantic Anniversary">
+                            <img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=400&q=80" alt="Romantic Anniversary">
+                        </a>
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h3>Anniversary Setup</h3>
+                                <p>Romantic celebration decoration</p>
+                            </div>
+                        </div>
+                        <div class="gallery-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flowers Item 3 -->
+                <div class="gallery-item" data-category="flowers">
+                    <div class="gallery-image-wrapper">
+                        <a href="https://images.unsplash.com/photo-1518531933037-91b2f5f9cc6f?w=800&q=80" data-lightbox="gallery" data-title="Wedding Flowers">
+                            <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f9cc6f?w=400&q=80" alt="Wedding Flowers">
+                        </a>
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h3>Wedding Flowers</h3>
+                                <p>Premium wedding flower arrangements</p>
+                            </div>
+                        </div>
+                        <div class="gallery-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Birthday Item 3 -->
+                <div class="gallery-item" data-category="birthday">
+                    <div class="gallery-image-wrapper">
+                        <a href="https://images.unsplash.com/photo-1534353436294-47dee155fc27?w=800&q=80" data-lightbox="gallery" data-title="Party Balloons">
+                            <img src="https://images.unsplash.com/photo-1534353436294-47dee155fc27?w=400&q=80" alt="Party Balloons">
+                        </a>
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h3>Balloon Decor</h3>
+                                <p>Fun and colorful balloon decorations</p>
+                            </div>
+                        </div>
+                        <div class="gallery-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wedding Item 3 -->
+                <div class="gallery-item" data-category="wedding">
+                    <div class="gallery-image-wrapper">
+                        <a href="https://images.unsplash.com/photo-1507699622457-641587a604d0?w=800&q=80" data-lightbox="gallery" data-title="Wedding Arch">
+                            <img src="https://images.unsplash.com/photo-1507699622457-641587a604d0?w=400&q=80" alt="Wedding Arch">
+                        </a>
+                        <div class="gallery-overlay">
+                            <div class="gallery-content">
+                                <h3>Wedding Arch</h3>
+                                <p>Beautiful decorative wedding arch</p>
+                            </div>
+                        </div>
+                        <div class="gallery-icon">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Ready to Transform Your Event?</h2>
+            <p class="text-gray-600 text-base md:text-lg mb-8 max-w-2xl mx-auto">Let our creative team design the perfect decoration for your special occasion. Contact us today for a free consultation!</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html#booking" class="bg-purple-600 text-white px-8 py-3 md:py-4 rounded-full font-semibold text-base md:text-lg hover:bg-purple-700 transition shadow-lg">
+                    <i class="fas fa-calendar-check mr-2"></i>Book Your Event
+                </a>
+                <a href="tel:+919346566373" class="border-2 border-purple-600 text-purple-600 px-8 py-3 md:py-4 rounded-full font-semibold text-base md:text-lg hover:bg-purple-50 transition">
+                    <i class="fas fa-phone mr-2"></i>Call Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 md:py-16">
+        <div class="container mx-auto px-4">
+            <div class="footer-grid grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16">
+                <!-- Brand Section -->
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fas fa-gifts text-purple-400 text-3xl md:text-4xl"></i>
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold">Party Wonders</h3>
+                            <p class="text-xs md:text-sm text-gray-400">& Florist Store</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed">Creating magical moments for every celebration in Hyderabad with premium decorations and fresh flowers.</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg md:text-xl font-bold mb-4 md:mb-5">Quick Links</h4>
+                    <ul class="space-y-2 md:space-y-3 text-gray-400">
+                        <li><a href="index.html#home" class="text-sm md:text-base hover:text-purple-400 transition duration-300">Home</a></li>
+                        <li><a href="index.html#services" class="text-sm md:text-base hover:text-purple-400 transition duration-300">Services</a></li>
+                        <li><a href="gallery.html" class="text-sm md:text-base hover:text-purple-400 transition duration-300">Gallery</a></li>
+                        <li><a href="index.html#about" class="text-sm md:text-base hover:text-purple-400 transition duration-300">About Us</a></li>
+                        <li><a href="index.html#booking" class="text-sm md:text-base hover:text-purple-400 transition duration-300">Book Now</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg md:text-xl font-bold mb-4 md:mb-5">Contact</h4>
+                    <ul class="space-y-3 md:space-y-4">
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <i class="fas fa-phone text-purple-400 text-lg flex-shrink-0"></i>
+                            <a href="tel:+919346566373" class="text-sm md:text-base hover:text-purple-400 transition duration-300">+91 93465 66373</a>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <i class="fas fa-envelope text-purple-400 text-lg flex-shrink-0"></i>
+                            <a href="mailto:Mothukunaveen2699@gmail.com" class="text-sm md:text-base hover:text-purple-400 transition duration-300 break-all">Mothukunaveen2699@gmail.com</a>
+                        </li>
+                        <li class="flex items-start gap-3 text-gray-400">
+                            <i class="fas fa-map-marker-alt text-purple-400 text-lg flex-shrink-0 mt-0.5"></i>
+                            <span class="text-sm md:text-base">Plot No 8, Shop No. 1<br>Quthbullapur, Hyderabad 500067</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Social Links -->
+                <div>
+                    <h4 class="text-lg md:text-xl font-bold mb-4 md:mb-5">Follow Us</h4>
+                    <div class="flex gap-3 flex-wrap">
+                        <a href="https://wa.me/919346566373" target="_blank" class="bg-green-600 hover:bg-green-700 text-white w-12 h-12 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                        </a>
+                        <a href="tel:+919346566373" class="bg-blue-600 hover:bg-blue-700 text-white w-12 h-12 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110">
+                            <i class="fas fa-phone text-lg"></i>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" class="bg-pink-600 hover:bg-pink-700 text-white w-12 h-12 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="https://www.facebook.com" target="_blank" class="bg-blue-700 hover:bg-blue-800 text-white w-12 h-12 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110">
+                            <i class="fab fa-facebook-f text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="border-t border-gray-800 pt-8 md:pt-10">
+                <div class="grid md:grid-cols-3 gap-4 text-center md:text-left items-center">
+                    <div class="text-gray-400 text-xs md:text-sm">
+                        <p>&copy; 2025 Party Wonders & Florist Store. All rights reserved.</p>
+                    </div>
+                    <div></div>
+                    <div class="flex gap-4 justify-center md:justify-end text-xs md:text-sm flex-wrap">
+                        <a href="privacy-policy.html" class="text-gray-400 hover:text-purple-400 transition duration-300">Privacy Policy</a>
+                        <span class="text-gray-600">|</span>
+                        <a href="terms-conditions.html" class="text-gray-400 hover:text-purple-400 transition duration-300">Terms & Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+    <script>
+        lightbox.option({
+            'resizeDuration': 200,
+            'wrapAround': true,
+            'albumLabel': 'Image %1 of %2'
+        });
+    </script>
+
+    <!-- Gallery Filter Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.gallery-filter');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Filter gallery items with animation
+                    galleryItems.forEach(item => {
+                        const category = item.getAttribute('data-category');
+                        
+                        if (filter === 'all' || category === filter) {
+                            item.classList.remove('hidden');
+                            setTimeout(() => {
+                                item.style.display = 'block';
+                            }, 10);
+                        } else {
+                            item.classList.add('hidden');
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
