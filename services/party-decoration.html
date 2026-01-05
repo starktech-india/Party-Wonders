@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Decoration Services | Birthday, Balloon & Theme Party Decor</title>
+    <meta name="description" content="Professional party decoration services for birthdays, balloon decor, kids theme parties, anniversary setups & romantic rooms. Transform your celebrations with our creative designs.">
+    <meta name="keywords" content="party decoration, birthday party decor, balloon decoration, kids theme parties, anniversary decoration, romantic room setup">
+    <meta name="author" content="Flower Decoration">
+    <meta property="og:title" content="Party Decoration Services - Create Memorable Celebrations">
+    <meta property="og:description" content="Expert party decoration for all occasions - birthdays, anniversaries, theme parties & more">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://flowerdecoration.com/services/party-decoration.html">
+    
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS with JIT -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#a855f7',
+                        secondary: '#ec4899',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Font Awesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Main CSS file -->
+    <link rel="stylesheet" href="../style.css">
+    
+    <!-- Critical CSS inline -->
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            overflow-x: hidden;
+            background-color: #f9fafb;
+        }
+
+        /* Minimize repaints */
+        .lazy-load {
+            opacity: 0;
+            transition: opacity 0.3s ease-in;
+        }
+
+        .lazy-load.loaded {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white shadow-sm">
+        <div class="container mx-auto max-w-6xl px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="logo text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent flex items-center gap-2">
+                    <i class="fas fa-flower"></i> Flower Decoration
+                </div>
+                <ul class="nav-links hidden md:flex gap-8">
+                    <li><a href="/" class="text-gray-600 font-medium hover:text-purple-500 transition">Home</a></li>
+                    <li><a href="/#services" class="text-gray-600 font-medium hover:text-purple-500 transition">Services</a></li>
+                    <li><a href="/#gallery" class="text-gray-600 font-medium hover:text-purple-500 transition">Gallery</a></li>
+                    <li><a href="/#contact" class="text-gray-600 font-medium hover:text-purple-500 transition">Contact</a></li>
+                </ul>
+                <button class="cta-btn hidden md:inline-flex bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-2 rounded hover:shadow-lg transition" onclick="scrollToBooking()">
+                    <i class="fas fa-calendar-check"></i> Book Now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-12 md:py-20 bg-gradient-to-b from-purple-50 to-transparent">
+        <div class="container mx-auto max-w-6xl px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-8 md:py-16">
+                <div class="lazy-load">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                        Party Decoration Services
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        Transform your celebrations into unforgettable moments with our creative and professional party decoration solutions. From intimate gatherings to grand celebrations, we bring your vision to life.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 flex-wrap">
+                        <button class="btn-primary bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-3 rounded hover:shadow-lg transition inline-flex items-center gap-2" onclick="scrollToBooking()">
+                            <i class="fas fa-calendar-check"></i> Book Consultation
+                        </button>
+                        <button class="btn-secondary border-2 border-purple-500 text-purple-500 px-8 py-3 rounded hover:bg-purple-500 hover:text-white transition inline-flex items-center gap-2" onclick="window.location.href='tel:+919876543210'">
+                            <i class="fas fa-phone"></i> Call Us
+                        </button>
+                    </div>
+                </div>
+                <div class="lazy-load">
+                    <img loading="lazy" src="https://via.placeholder.com/500x400?text=Party+Decoration" alt="Professional Party Decoration Setup" class="rounded-2xl shadow-lg w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto max-w-6xl px-4">
+            <div class="max-w-2xl lazy-load">
+                <h2 class="section-title text-3xl md:text-4xl font-bold text-gray-900 mb-4 relative pb-4 inline-block">
+                    Make Every Celebration Spectacular
+                    <span class="absolute bottom-0 left-0 w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded"></span>
+                </h2>
+                <p class="text-gray-600 mb-4 leading-relaxed">
+                    At Flower Decoration, we understand that every celebration is unique and special. Our expert party decoration team specializes in creating magical atmospheres for all types of occasions. Whether you're planning an intimate birthday party or a grand anniversary celebration, we have the expertise and creativity to exceed your expectations.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    With years of experience in event decoration, our team combines artistic vision with meticulous attention to detail. We work closely with you to understand your theme, preferences, and budget, ensuring that every decoration element perfectly aligns with your vision.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-12 md:py-20 bg-gray-50">
+        <div class="container mx-auto max-w-6xl px-4">
+            <h2 class="section-title text-center text-3xl md:text-4xl font-bold text-gray-900 mb-4 relative pb-4 inline-block w-full">
+                Our Party Services
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded"></span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+                
+                <!-- Birthday Parties -->
+                <div class="service-card lazy-load bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition border border-gray-100">
+                    <div class="w-20 h-20 bg-gradient-to-r from-pink-400 to-red-500 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-birthday-cake text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Birthday Parties</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                        Create magical birthday celebrations with our customized decoration packages. From children's parties with vibrant themes to elegant adult birthday bashes, we design every detail to make the birthday person feel special.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Themed decorations</li>
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Cake table setup</li>
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Photo booth areas</li>
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Stage & backdrop design</li>
+                    </ul>
+                    <button class="w-full bg-gradient-to-r from-pink-400 to-red-500 text-white py-3 rounded hover:shadow-lg transition flex items-center justify-center gap-2 font-semibold" onclick="scrollToBooking()">
+                        <i class="fas fa-arrow-right"></i> Book Now
+                    </button>
+                </div>
+
+                <!-- Balloon Decor -->
+                <div class="service-card lazy-load bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition border border-gray-100">
+                    <div class="w-20 h-20 bg-gradient-to-r from-blue-400 to-purple-500 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-balloon text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Balloon Decoration</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                        Transform your venue with our stunning balloon arrangements and installations. From elegant balloon backdrops to eye-catching balloon arches and columns, our creative designs add color and joy to any celebration.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Balloon arches & columns</li>
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Balloon backdrops</li>
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Custom balloon designs</li>
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Helium balloon installations</li>
+                    </ul>
+                    <button class="w-full bg-gradient-to-r from-blue-400 to-purple-500 text-white py-3 rounded hover:shadow-lg transition flex items-center justify-center gap-2 font-semibold" onclick="scrollToBooking()">
+                        <i class="fas fa-arrow-right"></i> Book Now
+                    </button>
+                </div>
+
+                <!-- Kids Theme Parties -->
+                <div class="service-card lazy-load bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition border border-gray-100">
+                    <div class="w-20 h-20 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-hat-wizard text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Kids Theme Parties</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                        Bring your child's favorite characters and fantasies to life! Our kids' theme parties feature immersive decorations that captivate young imaginations. From princess kingdoms to superhero adventures, we create magical worlds.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Character themes</li>
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Interactive setups</li>
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Colorful decorations</li>
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Safety-certified materials</li>
+                    </ul>
+                    <button class="w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white py-3 rounded hover:shadow-lg transition flex items-center justify-center gap-2 font-semibold" onclick="scrollToBooking()">
+                        <i class="fas fa-arrow-right"></i> Book Now
+                    </button>
+                </div>
+
+                <!-- Anniversary Setups -->
+                <div class="service-card lazy-load bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition border border-gray-100">
+                    <div class="w-20 h-20 bg-gradient-to-r from-red-400 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-heart text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Anniversary Celebrations</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                        Celebrate love and milestones with our elegant anniversary decoration packages. Whether it's your 1st or 50th anniversary, we create romantic and sophisticated settings that honor your journey together.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Romantic ambiance</li>
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Flower arrangements</li>
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Lighting design</li>
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Candle setups</li>
+                    </ul>
+                    <button class="w-full bg-gradient-to-r from-red-400 to-pink-500 text-white py-3 rounded hover:shadow-lg transition flex items-center justify-center gap-2 font-semibold" onclick="scrollToBooking()">
+                        <i class="fas fa-arrow-right"></i> Book Now
+                    </button>
+                </div>
+
+                <!-- Romantic Rooms -->
+                <div class="service-card lazy-load bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition border border-gray-100">
+                    <div class="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-spa text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Romantic Room Setup</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                        Create an intimate and romantic atmosphere for special moments. Our romantic room decorations combine elegant flowers, soft lighting, and luxurious touches to set the perfect mood for your special evening.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Ambient lighting</li>
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Flower bed arrangements</li>
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Luxury touches</li>
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Mood setting decor</li>
+                    </ul>
+                    <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded hover:shadow-lg transition flex items-center justify-center gap-2 font-semibold" onclick="scrollToBooking()">
+                        <i class="fas fa-arrow-right"></i> Book Now
+                    </button>
+                </div>
+
+                <!-- Corporate Events -->
+                <div class="service-card lazy-load bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition border border-gray-100">
+                    <div class="w-20 h-20 bg-gradient-to-r from-green-400 to-teal-500 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Corporate Events</h3>
+                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                        Professional decoration solutions for corporate events, office parties, and group celebrations. We ensure that your company event reflects your brand's professionalism while creating a festive atmosphere for your team.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Brand-themed decor</li>
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Professional setup</li>
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Large-scale installations</li>
+                        <li class="flex items-center text-gray-700 text-sm"><i class="fas fa-check text-green-500 mr-3 w-5"></i> Quick turnaround</li>
+                    </ul>
+                    <button class="w-full bg-gradient-to-r from-green-400 to-teal-500 text-white py-3 rounded hover:shadow-lg transition flex items-center justify-center gap-2 font-semibold" onclick="scrollToBooking()">
+                        <i class="fas fa-arrow-right"></i> Book Now
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto max-w-6xl px-4">
+            <h2 class="section-title text-center text-3xl md:text-4xl font-bold text-gray-900 mb-4 relative pb-4 inline-block w-full">
+                Why Choose Our Party Decoration Service?
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded"></span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                
+                <div class="text-center lazy-load">
+                    <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-crown text-3xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Creative Excellence</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Our talented team brings innovative ideas and artistic vision to every project, creating unique and memorable decoration designs.</p>
+                </div>
+
+                <div class="text-center lazy-load">
+                    <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-headset text-3xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Expert Support</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Our dedicated team provides comprehensive support from consultation to execution, ensuring a seamless decoration experience.</p>
+                </div>
+
+                <div class="text-center lazy-load">
+                    <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-3xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Timely Delivery</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">We guarantee punctual setup and installation, ensuring your venue is perfectly decorated right on time for your event.</p>
+                </div>
+
+                <div class="text-center lazy-load">
+                    <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-leaf text-3xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Quality Materials</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">We use premium, eco-friendly materials that are both beautiful and safe for all your guests and the environment.</p>
+                </div>
+
+                <div class="text-center lazy-load">
+                    <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-piggy-bank text-3xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Affordable Pricing</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Flexible packages to suit all budgets without compromising on quality and creativity of your party decorations.</p>
+                </div>
+
+                <div class="text-center lazy-load">
+                    <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-star text-3xl text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Proven Track Record</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Hundreds of satisfied customers and successful events showcase our expertise and commitment to excellence.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-12 md:py-20 bg-gray-50" id="gallery">
+        <div class="container mx-auto max-w-6xl px-4">
+            <h2 class="section-title text-center text-3xl md:text-4xl font-bold text-gray-900 mb-4 relative pb-4 inline-block w-full">
+                Our Work Gallery
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded"></span>
+            </h2>
+            
+            <div class="gallery-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+                <img loading="lazy" src="https://via.placeholder.com/400x300?text=Birthday+Party" alt="Birthday Party Decoration Examples" class="w-full rounded-lg shadow-md hover:shadow-xl transition hover:-translate-y-2">
+                <img loading="lazy" src="https://via.placeholder.com/400x300?text=Balloon+Decor" alt="Balloon Decoration Examples" class="w-full rounded-lg shadow-md hover:shadow-xl transition hover:-translate-y-2">
+                <img loading="lazy" src="https://via.placeholder.com/400x300?text=Theme+Party" alt="Theme Party Setup Examples" class="w-full rounded-lg shadow-md hover:shadow-xl transition hover:-translate-y-2">
+                <img loading="lazy" src="https://via.placeholder.com/400x300?text=Anniversary" alt="Anniversary Decoration Examples" class="w-full rounded-lg shadow-md hover:shadow-xl transition hover:-translate-y-2">
+                <img loading="lazy" src="https://via.placeholder.com/400x300?text=Romantic+Room" alt="Romantic Room Setup Examples" class="w-full rounded-lg shadow-md hover:shadow-xl transition hover:-translate-y-2">
+                <img loading="lazy" src="https://via.placeholder.com/400x300?text=Event+Setup" alt="Event Decoration Examples" class="w-full rounded-lg shadow-md hover:shadow-xl transition hover:-translate-y-2">
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="py-12 md:py-20 bg-white">
+        <div class="container mx-auto max-w-6xl px-4">
+            <h2 class="section-title text-center text-3xl md:text-4xl font-bold text-gray-900 mb-4 relative pb-4 inline-block w-full">
+                Transparent Pricing
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded"></span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-4xl mx-auto">
+                
+                <!-- Basic Plan -->
+                <div class="pricing-card bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-purple-500 transition">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Basic</h3>
+                    <p class="text-4xl font-bold text-purple-500 mb-2">₹5,000</p>
+                    <p class="text-gray-600 mb-6">Starting price</p>
+                    <ul class="text-left space-y-3 mb-8">
+                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-green-500 mr-3"></i> Simple decor</li>
+                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-green-500 mr-3"></i> 2-3 hours setup</li>
+                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-green-500 mr-3"></i> Basic themes</li>
+                    </ul>
+                    <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded-lg hover:shadow-lg transition font-semibold" onclick="scrollToBooking()">Get Started</button>
+                </div>
+
+                <!-- Standard Plan (Popular) -->
+                <div class="pricing-card bg-gradient-to-b from-purple-50 to-pink-50 border-2 border-purple-500 rounded-2xl p-8 text-center transform md:scale-105 relative">
+                    <span class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-purple-500 text-white px-4 py-1 rounded-full text-sm font-bold uppercase">POPULAR</span>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3 mt-2">Standard</h3>
+                    <p class="text-4xl font-bold text-purple-500 mb-2">₹12,000</p>
+                    <p class="text-gray-600 mb-6">Most popular</p>
+                    <ul class="text-left space-y-3 mb-8">
+                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-green-500 mr-3"></i> Premium decor</li>
+                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-green-500 mr-3"></i> 4-5 hours setup</li>
+                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-green-500 mr-3"></i> Custom themes</li>
+                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-green-500 mr-3"></i> Consultation</li>
+                    </ul>
+                    <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded-lg hover:shadow-lg transition font-semibold" onclick="scrollToBooking()">Book Now</button>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="pricing-card bg-white border-2 border-gray-200 rounded-2xl p-8 text-center hover:border-purple-500 transition">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Premium</h3>
+                    <p class="text-4xl font-bold text-purple-500 mb-2">₹25,000+</p>
+                    <p class="text-gray-600 mb-6">Luxury experience</p>
+                    <ul class="text-left space-y-3 mb-8">
+                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-green-500 mr-3"></i> Full day setup</li>
+                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-green-500 mr-3"></i> Premium materials</li>
+                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-green-500 mr-3"></i> Custom designs</li>
+                        <li class="flex items-center text-gray-600"><i class="fas fa-check text-green-500 mr-3"></i> On-site team</li>
+                    </ul>
+                    <button class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 rounded-lg hover:shadow-lg transition font-semibold" onclick="scrollToBooking()">Enquire</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-12 md:py-20 bg-gray-50">
+        <div class="container mx-auto max-w-2xl px-4">
+            <h2 class="section-title text-center text-3xl md:text-4xl font-bold text-gray-900 mb-4 relative pb-4 inline-block w-full">
+                Frequently Asked Questions
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded"></span>
+            </h2>
+            
+            <div class="mt-12 space-y-4">
+                
+                <details class="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition border-l-4 border-transparent hover:border-purple-500 group" open>
+                    <summary class="font-semibold text-gray-900 cursor-pointer flex justify-between items-center select-none">
+                        How much advance notice do you need for party decorations?
+                        <i class="fas fa-chevron-down text-purple-500 transition group-open:rotate-180"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed">We recommend booking at least 7-10 days in advance for regular parties. However, for rush bookings, we can accommodate with 2-3 days notice depending on availability and the complexity of your design.</p>
+                </details>
+
+                <details class="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition border-l-4 border-transparent hover:border-purple-500 group">
+                    <summary class="font-semibold text-gray-900 cursor-pointer flex justify-between items-center select-none">
+                        Do you provide customized themes?
+                        <i class="fas fa-chevron-down text-purple-500 transition group-open:rotate-180"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed">Absolutely! We specialize in creating custom themes tailored to your specific preferences. Share your ideas, and our creative team will design and execute a unique decoration that reflects your vision perfectly.</p>
+                </details>
+
+                <details class="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition border-l-4 border-transparent hover:border-purple-500 group">
+                    <summary class="font-semibold text-gray-900 cursor-pointer flex justify-between items-center select-none">
+                        Can you decorate outdoor venues?
+                        <i class="fas fa-chevron-down text-purple-500 transition group-open:rotate-180"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed">Yes, we specialize in both indoor and outdoor decorations. For outdoor venues, we use weather-resistant materials and take weather conditions into account to ensure your decorations last throughout your event.</p>
+                </details>
+
+                <details class="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition border-l-4 border-transparent hover:border-purple-500 group">
+                    <summary class="font-semibold text-gray-900 cursor-pointer flex justify-between items-center select-none">
+                        What is your cancellation policy?
+                        <i class="fas fa-chevron-down text-purple-500 transition group-open:rotate-180"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-600 leading-relaxed">Cancellations made 7 days before the event are fully refundable. Cancellations within 7 days will incur a 50% service charge. We understand that plans can change, and we're flexible where possible.</p>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-12 md:py-20 bg-gradient-to-r from-purple-500 to-pink-500">
+        <div class="container mx-auto max-w-6xl px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Plan Your Perfect Party?</h2>
+            <p class="text-lg text-white text-opacity-90 mb-8">Contact us today for a free consultation and quote</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
+                <button class="bg-white text-purple-500 px-8 py-3 rounded-lg hover:bg-gray-100 transition font-semibold inline-flex items-center gap-2" onclick="scrollToBooking()">
+                    <i class="fas fa-calendar-check"></i> Book Consultation
+                </button>
+                <button class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:bg-opacity-10 transition font-semibold inline-flex items-center gap-2" onclick="window.location.href='tel:+919876543210'">
+                    <i class="fas fa-phone"></i> Call: +91 XXXXX XXXXX
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-b from-gray-900 to-black text-white py-12 md:py-16">
+        <div class="container mx-auto max-w-6xl px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                
+                <div class="footer-section">
+                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <i class="fas fa-flower text-purple-400"></i> Flower Decoration
+                    </h3>
+                    <p class="text-gray-300 text-sm mb-4">Making celebrations memorable since 2020. We specialize in creative and professional decoration for all occasions.</p>
+                    <div class="social-links flex gap-3">
+                        <a href="#" title="Facebook" class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center hover:bg-purple-600 transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Instagram" class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center hover:bg-purple-600 transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Twitter" class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center hover:bg-purple-600 transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="LinkedIn" class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center hover:bg-purple-600 transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="text-lg font-bold mb-4 border-b border-purple-500 pb-2">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/" class="hover:text-purple-400 transition">Home</a></li>
+                        <li><a href="/#services" class="hover:text-purple-400 transition">Services</a></li>
+                        <li><a href="/#gallery" class="hover:text-purple-400 transition">Gallery</a></li>
+                        <li><a href="/#contact" class="hover:text-purple-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="text-lg font-bold mb-4 border-b border-purple-500 pb-2">Services</h3>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="/services/party-decoration.html" class="hover:text-purple-400 transition">Party Decoration</a></li>
+                        <li><a href="/services/flower-services.html" class="hover:text-purple-400 transition">Flower Services</a></li>
+                        <li><a href="/services/wedding-events.html" class="hover:text-purple-400 transition">Wedding & Events</a></li>
+                        <li><a href="/services/gifts-corporate.html" class="hover:text-purple-400 transition">Gifts & Corporate</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3 class="text-lg font-bold mb-4 border-b border-purple-500 pb-2">Contact Info</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start gap-2"><i class="fas fa-phone text-purple-400 mt-1"></i> <a href="tel:+919876543210" class="hover:text-purple-400 transition">+91 9876543210</a></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-envelope text-purple-400 mt-1"></i> <a href="mailto:info@flowerdecoration.com" class="hover:text-purple-400 transition">info@flowerdecoration.com</a></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-map-marker-alt text-purple-400 mt-1"></i> <span>City Address, State, Country</span></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom border-t border-gray-700 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2026 Flower Decoration. All rights reserved. | <a href="#" class="hover:text-purple-400 transition">Privacy Policy</a> | <a href="#" class="hover:text-purple-400 transition">Terms & Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <div class="floating-buttons fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+        <a href="https://wa.me/919876543210" class="floating-btn whatsapp w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition shadow-lg" title="WhatsApp Us" target="_blank">
+            <i class="fab fa-whatsapp text-xl"></i>
+        </a>
+        <a href="tel:+919876543210" class="floating-btn call w-14 h-14 bg-red-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition shadow-lg" title="Call Now">
+            <i class="fas fa-phone text-xl"></i>
+        </a>
+        <a href="mailto:info@flowerdecoration.com" class="floating-btn email w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center text-white hover:scale-110 transition shadow-lg" title="Email Us">
+            <i class="fas fa-envelope text-xl"></i>
+        </a>
+    </div>
+
+    <script>
+        // Lazy load animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('loaded');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.lazy-load').forEach(el => observer.observe(el));
+
+        function scrollToBooking() {
+            alert('Booking form would be here. For now, please call or WhatsApp us!');
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
