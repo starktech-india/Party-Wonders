@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-50">
     
@@ -17,21 +18,36 @@
     <nav class="bg-white shadow-md fixed w-full top-0 z-40">
         <div class="container mx-auto px-4 py-3 md:py-4">
             <div class="flex justify-between items-center">
-                <a href="index.html" class="flex items-center space-x-2">
+                <div class="flex items-center space-x-2">
                     <i class="fas fa-gifts text-purple-600 text-2xl md:text-3xl"></i>
                     <div>
                         <h1 class="text-lg md:text-2xl font-bold text-gray-800">Party Wonders</h1>
                         <p class="text-xs text-gray-500">& Florist Store</p>
                     </div>
-                </a>
+                </div>
                 <div class="hidden md:flex space-x-6">
-                    <a href="index.html#home" class="text-gray-700 hover:text-purple-600 transition">Home</a>
-                    <a href="index.html#services" class="text-gray-700 hover:text-purple-600 transition">Services</a>
-                    <a href="gallery.html" class="text-purple-600 font-semibold">Gallery</a>
-                    <a href="index.html#about" class="text-gray-700 hover:text-purple-600 transition">About</a>
-                    <a href="index.html#booking" class="text-gray-700 hover:text-purple-600 transition">Book Now</a>
+                    <a href="https://starktech-india.github.io/Party-Wonders/#home" class="text-gray-700 hover:text-purple-600 transition">Home</a>
+                    <a href="https://starktech-india.github.io/Party-Wonders/#services" class="text-gray-700 hover:text-purple-600 transition">Services</a>
+                    <a href="https://starktech-india.github.io/Party-Wonders/gallery.html" class="text-gray-700 hover:text-purple-600 transition">Gallery</a>
+                    <a href="https://starktech-india.github.io/Party-Wonders/#about" class="text-gray-700 hover:text-purple-600 transition">About</a>
+                    <a href="https://starktech-india.github.io/Party-Wonders/#booking" class="text-gray-700 hover:text-purple-600 transition">Book Now</a>
                 </div>
                 <a href="tel:+919346566373" class="hidden md:block bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition text-sm">
+                    <i class="fas fa-phone mr-2"></i>Call Now
+                </a>
+                <button id="mobileMenuBtn" class="md:hidden text-gray-700 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu hidden md:hidden mt-4 pb-4">
+                <a href="https://starktech-india.github.io/Party-Wonders/#home" class="block py-2 text-gray-700 hover:text-purple-600 transition">Home</a>
+                <a href="https://starktech-india.github.io/Party-Wonders/#services" class="block py-2 text-gray-700 hover:text-purple-600 transition">Services</a>
+                <a href="https://starktech-india.github.io/Party-Wonders/gallery.html" class="block py-2 text-gray-700 hover:text-purple-600 transition">Gallery</a>
+                <a href="https://starktech-india.github.io/Party-Wonders/#about" class="block py-2 text-gray-700 hover:text-purple-600 transition">About</a>
+                <a href="https://starktech-india.github.io/Party-Wonders/#booking" class="block py-2 text-gray-700 hover:text-purple-600 transition">Book Now</a>
+                <a href="tel:+919346566373" class="block mt-4 bg-purple-600 text-white px-4 py-2 rounded-full hover:bg-purple-700 transition text-sm text-center">
                     <i class="fas fa-phone mr-2"></i>Call Now
                 </a>
             </div>
@@ -120,84 +136,90 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 md:py-16">
+    <footer class="bg-gray-900 text-white py-8 md:py-16">
         <div class="container mx-auto px-4">
-            <div class="footer-grid grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-12 md:mb-16">
+            <!-- Footer Grid -->
+            <div class="footer-grid gap-8 md:gap-12 mb-8 md:mb-12">
                 <!-- Brand Section -->
-                <div>
-                    <div class="flex items-center space-x-3 mb-4">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center space-x-3 mb-4 justify-center md:justify-start">
                         <i class="fas fa-gifts text-purple-400 text-3xl md:text-4xl"></i>
                         <div>
                             <h3 class="text-xl md:text-2xl font-bold">Party Wonders</h3>
                             <p class="text-xs md:text-sm text-gray-400">& Florist Store</p>
                         </div>
                     </div>
-                    <p class="text-gray-400 text-sm md:text-base leading-relaxed">Creating magical moments for every celebration in Hyderabad with premium decorations and fresh flowers.</p>
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed max-w-sm mx-auto md:mx-0">Creating magical moments for every celebration in Hyderabad with premium decorations and fresh flowers.</p>
                 </div>
                 
                 <!-- Quick Links -->
-                <div>
+                <div class="text-center md:text-left">
                     <h4 class="text-lg md:text-xl font-bold mb-4 md:mb-5">Quick Links</h4>
                     <ul class="space-y-2 md:space-y-3 text-gray-400">
-                        <li><a href="index.html#home" class="text-sm md:text-base hover:text-purple-400 transition duration-300">Home</a></li>
-                        <li><a href="index.html#services" class="text-sm md:text-base hover:text-purple-400 transition duration-300">Services</a></li>
-                        <li><a href="gallery.html" class="text-sm md:text-base hover:text-purple-400 transition duration-300">Gallery</a></li>
-                        <li><a href="index.html#about" class="text-sm md:text-base hover:text-purple-400 transition duration-300">About Us</a></li>
-                        <li><a href="index.html#booking" class="text-sm md:text-base hover:text-purple-400 transition duration-300">Book Now</a></li>
+                        <li><a href="https://starktech-india.github.io/Party-Wonders/#home" class="text-sm md:text-base hover:text-purple-400 transition duration-300">Home</a></li>
+                        <li><a href="https://starktech-india.github.io/Party-Wonders/#services" class="text-sm md:text-base hover:text-purple-400 transition duration-300">Services</a></li>
+                        <li><a href="https://starktech-india.github.io/Party-Wonders/gallery.html" class="text-sm md:text-base hover:text-purple-400 transition duration-300">Gallery</a></li>
+                        <li><a href="https://starktech-india.github.io/Party-Wonders/#about" class="text-sm md:text-base hover:text-purple-400 transition duration-300">About Us</a></li>
+                        <li><a href="https://starktech-india.github.io/Party-Wonders/#booking" class="text-sm md:text-base hover:text-purple-400 transition duration-300">Book Now</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div class="text-center md:text-left">
+                    <h4 class="text-lg md:text-xl font-bold mb-4 md:mb-5">Services</h4>
+                    <ul class="space-y-2 md:space-y-3 text-gray-400">
+                        <li class="text-sm md:text-base"><i class="fas fa-check-circle text-purple-400 mr-2"></i>Party Decoration</li>
+                        <li class="text-sm md:text-base"><i class="fas fa-check-circle text-purple-400 mr-2"></i>Flower Services</li>
+                        <li class="text-sm md:text-base"><i class="fas fa-check-circle text-purple-400 mr-2"></i>Wedding & Events</li>
+                        <li class="text-sm md:text-base"><i class="fas fa-check-circle text-purple-400 mr-2"></i>Corporate Gifts</li>
                     </ul>
                 </div>
                 
                 <!-- Contact Info -->
-                <div>
-                    <h4 class="text-lg md:text-xl font-bold mb-4 md:mb-5">Contact</h4>
+                <div class="text-center md:text-left">
+                    <h4 class="text-lg md:text-xl font-bold mb-4 md:mb-5">Contact Info</h4>
                     <ul class="space-y-3 md:space-y-4">
-                        <li class="flex items-center gap-3 text-gray-400">
+                        <li class="flex items-center gap-3 justify-center md:justify-start text-gray-400">
                             <i class="fas fa-phone text-purple-400 text-lg flex-shrink-0"></i>
                             <a href="tel:+919346566373" class="text-sm md:text-base hover:text-purple-400 transition duration-300">+91 93465 66373</a>
                         </li>
-                        <li class="flex items-center gap-3 text-gray-400">
+                        <li class="flex items-center gap-3 justify-center md:justify-start text-gray-400">
                             <i class="fas fa-envelope text-purple-400 text-lg flex-shrink-0"></i>
                             <a href="mailto:Mothukunaveen2699@gmail.com" class="text-sm md:text-base hover:text-purple-400 transition duration-300 break-all">Mothukunaveen2699@gmail.com</a>
                         </li>
-                        <li class="flex items-start gap-3 text-gray-400">
+                        <li class="flex items-start gap-3 justify-center md:justify-start text-gray-400">
                             <i class="fas fa-map-marker-alt text-purple-400 text-lg flex-shrink-0 mt-0.5"></i>
-                            <span class="text-sm md:text-base">Plot No 8, Shop No. 1<br>Quthbullapur, Hyderabad 500067</span>
+                            <span class="text-sm md:text-base">Plot No 8, Shop No. 1<br>Near KISAN FASHION MALL<br>Quthbullapur, Hyderabad 500067</span>
                         </li>
                     </ul>
                 </div>
+            </div>
 
-                <!-- Social Links -->
-                <div>
-                    <h4 class="text-lg md:text-xl font-bold mb-4 md:mb-5">Follow Us</h4>
-                    <div class="flex gap-3 flex-wrap">
-                        <a href="https://wa.me/919346566373" target="_blank" class="bg-green-600 hover:bg-green-700 text-white w-12 h-12 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110">
-                            <i class="fab fa-whatsapp text-lg"></i>
-                        </a>
-                        <a href="tel:+919346566373" class="bg-blue-600 hover:bg-blue-700 text-white w-12 h-12 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110">
-                            <i class="fas fa-phone text-lg"></i>
-                        </a>
-                        <a href="https://www.instagram.com" target="_blank" class="bg-pink-600 hover:bg-pink-700 text-white w-12 h-12 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110">
-                            <i class="fab fa-instagram text-lg"></i>
-                        </a>
-                        <a href="https://www.facebook.com" target="_blank" class="bg-blue-700 hover:bg-blue-800 text-white w-12 h-12 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110">
-                            <i class="fab fa-facebook-f text-lg"></i>
-                        </a>
-                    </div>
-                </div>
+            <!-- Social Links -->
+            <div class="flex justify-center gap-4 mb-8 md:mb-12 py-8 md:py-10 border-t border-b border-gray-800">
+                <a href="https://wa.me/919346566373" target="_blank" class="bg-green-600 hover:bg-green-700 text-white w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110">
+                    <i class="fab fa-whatsapp text-xl md:text-2xl"></i>
+                </a>
+                <a href="tel:+919346566373" class="bg-blue-600 hover:bg-blue-700 text-white w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110">
+                    <i class="fas fa-phone text-xl md:text-2xl"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" class="bg-pink-600 hover:bg-pink-700 text-white w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110">
+                    <i class="fab fa-instagram text-xl md:text-2xl"></i>
+                </a>
+                <a href="https://www.facebook.com" target="_blank" class="bg-blue-700 hover:bg-blue-800 text-white w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center transition duration-300 transform hover:scale-110">
+                    <i class="fab fa-facebook-f text-xl md:text-2xl"></i>
+                </a>
             </div>
 
             <!-- Bottom Footer -->
-            <div class="border-t border-gray-800 pt-8 md:pt-10">
-                <div class="grid md:grid-cols-3 gap-4 text-center md:text-left items-center">
-                    <div class="text-gray-400 text-xs md:text-sm">
-                        <p>&copy; 2025 Party Wonders & Florist Store. All rights reserved.</p>
-                    </div>
-                    <div></div>
-                    <div class="flex gap-4 justify-center md:justify-end text-xs md:text-sm flex-wrap">
-                        <a href="privacy-policy.html" class="text-gray-400 hover:text-purple-400 transition duration-300">Privacy Policy</a>
-                        <span class="text-gray-600">|</span>
-                        <a href="terms-conditions.html" class="text-gray-400 hover:text-purple-400 transition duration-300">Terms & Conditions</a>
-                    </div>
+            <div class="grid md:grid-cols-2 gap-4 text-center md:text-left items-center">
+                <div class="text-gray-400 text-xs md:text-sm order-2 md:order-1">
+                    <p>&copy; 2025 Party Wonders & Florist Store. All rights reserved.</p>
+                </div>
+                <div class="flex gap-4 justify-center md:justify-end text-xs md:text-sm order-1 md:order-2 mb-4 md:mb-0">
+                    <a href="https://starktech-india.github.io/Party-Wonders/privacy-policy.html" class="text-gray-400 hover:text-purple-400 transition duration-300">Privacy Policy</a>
+                    <span class="text-gray-600">|</span>
+                    <a href="https://starktech-india.github.io/Party-Wonders/terms-conditions.html" class="text-gray-400 hover:text-purple-400 transition duration-300">Terms & Conditions</a>
                 </div>
             </div>
         </div>
@@ -365,5 +387,6 @@
         document.addEventListener('DOMContentLoaded', loadGalleryData);
     </script>
 
+<script src="script.js"></script>
 </body>
 </html>

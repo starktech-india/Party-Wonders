@@ -12,6 +12,26 @@
             });
         }
 
+        // Mobile Menu Toggle
+        function initMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            if (!mobileMenuBtn || !mobileMenu) return;
+
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close menu when clicking on links
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+
         // Desktop Carousel Script
         function initCarousel(containerId, prevBtnId, nextBtnId, dotsId) {
             const container = document.getElementById(containerId);
@@ -147,8 +167,7 @@
 
         // Initialize slider when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
-            initInteractiveSlider();
-            initCarousel('carouselContainerDesktop', 'prevBtnDesktop', 'nextBtnDesktop', 'dotsDesktop');
+            initInteractiveSlider();            initMobileMenu();            initCarousel('carouselContainerDesktop', 'prevBtnDesktop', 'nextBtnDesktop', 'dotsDesktop');
             initSlider();
         });
 
